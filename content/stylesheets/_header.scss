@@ -1,0 +1,52 @@
+#header {
+  @include trailer(.5);
+  @include pie-clearfix;
+  position: relative;
+  background: url('http://placekitten.com/1732/272') no-repeat bottom;
+}
+
+#logo {
+  $font-size: 48px;
+  @include full;
+  @include adjust-font-size-to($font-size);
+  @include text-shadow(rgba(black, .3) 0 0 5px);
+  @include rhythm(0, .5, 0, 1, $font-size);
+  @include box-sizing(border-box);
+  margin-left: rhythm(.5);
+  height: rhythm(3);
+  padding-left: rhythm(.5, $font-size);
+  a {
+    color: white;
+    &:hover { text-decoration: none; }
+  }
+}
+
+#social {
+  @include horizontal-list(0, right);
+  @include full;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+nav {
+  $prefix: 8.85;
+  @include prefix($prefix, $total-cols);
+  background: rgba(white, .75);
+  text-transform: uppercase;
+  ol {
+    @include horizontal-list(0);
+  }
+  a {
+    $color1: rgba(black, .3);
+    $color2: rgba(black, .5);
+    @include link-colors($color1, $color2, $color2, $color1, $color2);
+  }
+  .active {
+    color: nth($colors, 5);
+  }
+  a, .active {
+    display: block;
+    padding: rhythm(.5);
+  }
+}

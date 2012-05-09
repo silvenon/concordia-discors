@@ -1,0 +1,90 @@
+[role='main'] {
+  @include columns($main);
+  @include alpha;
+  @include trailer;
+}
+
+time { color: lighten($text, 30%); }
+
+$cols: 9;
+#highlight {
+  @include columns($cols, $main);
+  @include leader(-4);
+  position: relative;
+  z-index: 10;
+  .gradient {
+    padding: rhythm(.25);
+    background: rgba(black, .15);
+    $color1: rgba(black, .05);
+    $color2: rgba(black, .1);
+    @include background(linear-gradient(
+      45deg,
+      $color1 25%,
+      $color2 25%,
+      $color2 50%,
+      $color1 50%,
+      $color1 75%,
+      $color2 75%
+    ));
+    @include background-size(4px 4px);
+  }
+  .content {
+    @include box-shadow(rgba(black, .3) 0 0 8px);
+    padding: rhythm(.75);
+    background: white;
+  }
+  h1 {
+    $font-size: 64px;
+    @include adjust-font-size-to($font-size);
+    @include trailer(1, $font-size);
+    @include text-shadow(
+      white 1px 1px 0,
+      rgba(black, .25) 2px 2px 1px
+    );
+    color: nth($colors, 3);
+    text-transform: none;
+  }
+  time {
+    @include trailer(.5);
+    display: block;
+    text-align: right;
+  }
+  img {
+    @include trailer(.5);
+    @include box-shadow(inset rgba(black, .8) 0 0 2px 2px inset);
+    display: block;
+  }
+  p {
+    $font-size: 20px;
+    @include adjust-font-size-to($font-size, 1);
+    @include trailer(1, $font-size);
+  }
+  table {
+    $font-size: 20px;
+    @include adjust-font-size-to($font-size);
+    @include trailer(.5, $font-size);
+    width: 100%;
+    border-collapse: collapse;
+    tr:nth-child(2n+1) {
+      background: rgba(nth($colors, 3), .1);
+    }
+    td:nth-child(2) { color: nth($colors, 3); }
+  }
+  :last-child { @include trailer(0); }
+  :last-child.img { font-size: 0; }
+}
+
+$cols: $main - $cols;
+#highlight ~ article {
+  @include columns($cols, $main);
+  @include omega($main);
+  @include text-shadow(white 0 1px 0);
+  h1 {
+    float: left;
+  }
+  time {
+    @include leader(.5);
+    float: right;
+  }
+  p, ol, ul { clear: both; }
+}

@@ -1,0 +1,25 @@
+$total-cols: 24;
+
+$sidebar: 3;
+$main: $total-cols - $sidebar;
+
+$base-font-size: 18px;
+$base-line-height: 24px;
+
+$font_path: 'fontawesome-webfont';
+
+$body: 'PT Sans', 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
+$heading: 'PT Sans Narrow', $body;
+
+$colors: #D6C274 #D89E46 #25706B #3D2423 #AB362E;
+
+$text: lighten(black, 30%);
+
+$link1: nth($colors, 5);
+$link2: darken($link1, 20%);
+
+@mixin unstyled-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}

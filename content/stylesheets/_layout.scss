@@ -1,0 +1,50 @@
+@include establish-baseline;
+
+html {
+  background: darken(white, 5%);
+}
+
+body {
+  // @include debug-vertical-alignment;
+  // @include susy-grid-background;
+  margin: 0;
+  padding: 0;
+  @include rhythm(0, 0, 1, 0);
+  overflow-y: scroll;
+  font-family: $body;;
+  color: $text;
+}
+
+#header, #wrapper, #footer {
+  @include container;
+}
+
+#{headings()}, p, ol, ul, table, article {
+  @include rhythm(0, 0, 0, .5);
+}
+
+#{headings()} {
+  font: {
+    family: $heading;
+  }
+  text-transform: uppercase;
+}
+
+strong {
+  color: nth($colors, 3);
+}
+
+h1 {
+  $font-size: 36px;
+  @include adjust-font-size-to($font-size);
+  @include trailer(1, $font-size);
+}
+
+a {
+  @include hover-link;
+  @include link-colors($link1, $link2, $link2, $link1, $link2);
+}
+
+img, iframe {
+  max-width: 100%;
+}

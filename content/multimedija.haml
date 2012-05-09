@@ -1,0 +1,16 @@
+---
+title: Multimedija
+name: Multimedija
+id: multimedija
+order: 2
+---
+
+- content_for :highlight do
+  %h1 Do posljednjeg zbora (6 emisija)
+  <iframe width="560" height="315" src="http://www.youtube.com/embed/KjHaT4lQ_8E" frameborder="0" allowfullscreen></iframe>
+
+%article#gallery
+  %ul
+    - 9.times do
+      %li
+        %img{:src => 'http://placekitten.com/225/150'}

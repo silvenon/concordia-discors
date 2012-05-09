@@ -1,0 +1,8 @@
+#gallery {
+  ul {
+    @include horizontal-list(0);
+  }
+  li {
+    margin-right: 6px;
+  }
+}

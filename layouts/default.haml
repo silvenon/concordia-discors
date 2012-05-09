@@ -1,0 +1,62 @@
+!!!
+%html{:lang => 'hr'}
+  %head
+    %meta{:charset => 'utf-8'}
+    %title Concordia Discors &middot; #{@item[:title]}
+    %meta{:name => 'robots', :content => 'noindex'}
+    %meta{:content => 'nanoc 3.3.6', :name => 'generator'}
+    %link{:href => 'http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|PT+Sans+Narrow:700|Buenard:400,700&subset=latin,latin-ext', :rel => 'stylesheet', :type => 'text/css'}
+    %link{:href => '/stylesheets/app.css', :rel => 'stylesheet', :type => 'text/css'}
+    %script{:src => '/zepto.min.js'}
+    %script{:src => '/javascripts/helpers.js'}
+    %body{:id => @item[:id]}
+    %header#header
+      %h1#logo
+        %a{:href => '/'}
+          %img{:src => '/images/logo/cd.png'}
+      %ol#social
+        %li
+          %a#facebook{:href => 'https://www.facebook.com/pages/Akademski-zbor-FFZG-Concordia-discors/160790383965096', :target => '_blank', :title => 'Concordia Discors na Facebook-u'}
+            %img{:src => '/images/logo/facebook.png'}
+      %nav
+        %ol
+          = list_of navigation_pages do |page|
+            = link_to_unless_current page[:name], page
+
+    #wrapper
+      %div{:role => 'main'}
+        %article#highlight
+          .gradient
+            .content
+              = content_for(@item, :highlight) || nil
+        = yield
+
+      %aside
+        = content_for(@item, :sidebar) || nil
+
+    %footer#footer
+      %h1 Vanjski linkovi
+      %ol#links
+        %li
+          %a{:href => 'http://www.ffzg.unizg.hr/', :title => 'Filozofski fakultet u Zagrebu', :target => '_blank'}
+            %img{:src => '/images/logo/ffzg.gif'}
+        %li
+          %a{:href => 'http://www.unizg.hr/', :title => 'Sveučilište u Zagrebu', :target => '_blank'}
+            %img{:src => '/images/logo/unizg.jpg'}
+        %li
+          %a{:href => 'http://ksff.ffzg.hr/', :title => 'Klub Studenata Filozofskog Fakulteta', :target => '_blank'} KSFF
+        %li
+          %a{:href => 'http://www.huz.com.hr/', :title => 'Hrvatska udruga zborovođa', :target => '_blank'}
+            %img{:src => '/images/logo/huz.jpg'}
+        %li
+          %a{:href => 'http://www.hrt.hr/index.php?id=137&tx_ttnews%5Bcat%5D=477', :title => 'HRT: Do posljednjeg zbora', :target => '_blank'}
+            %img{:src => '/images/logo/dpz.jpg'}
+            %img.at.hrt{:src => '/images/logo/hrt.png'}
+        %li
+          %a{:href => 'https://www.facebook.com/do.posljednjeg.zbora', :title => 'Facebook: Do posljednjeg zbora', :target => '_blank'}
+            %img{:src => '/images/logo/dpz.jpg'}
+            %img.at.fb{:src => '/images/logo/facebook.png'}
+        %li
+          %a{:href => 'http://www.youtube.com/user/DoPosljednjegZbora', :title => 'YouTube: Do posljednjeg zbora', :target => '_blank'}
+            %img{:src => '/images/logo/dpz.jpg'}
+            %img.at.youtube{:src => '/images/logo/youtube.png'}

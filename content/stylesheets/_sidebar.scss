@@ -1,0 +1,22 @@
+aside {
+  @include columns($sidebar);
+  @include omega;
+  // article {
+  //   @include rhythm-borders($lines: .5);
+  //   @include border-radius(3px);
+  //   background: rgba(black, .75);
+  //   color: white;
+  //   border-color: rgba(black, .4);
+  //   @include text-shadow(rgba(black, .5) 1px 1px 1px);
+  //   h1 {
+  //     $font-size: 24px;
+  //     @include adjust-font-size-to($font-size);
+  //     @include trailer(0, $font-size);
+  //     color: nth($colors, 2);
+  //   }
+  //   p {
+  //     $font-size: 14px;
+  //     @include adjust-font-size-to($font-size);
+  //   }
+  // }
+}

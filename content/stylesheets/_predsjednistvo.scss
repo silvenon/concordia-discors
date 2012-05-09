@@ -1,0 +1,18 @@
+#predsjednistvo {
+  #highlight {
+    img:nth-of-type(2) {
+      @include leader(-12);
+      margin-left: rhythm(.5);
+      width: rhythm(8);
+      outline: 2px solid white;
+    }
+    img {
+      max-height: 100%;
+    }
+    .photos {
+      @include horizontal-list(1px);
+      @include trailer(.5);
+      li { height: 314px; }
+    }
+  }
+}
