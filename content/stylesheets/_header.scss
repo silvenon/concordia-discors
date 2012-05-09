@@ -1,18 +1,17 @@
 #header {
   @include trailer(.5);
   @include pie-clearfix;
-  position: relative;
-  background: url('http://placekitten.com/1732/272') no-repeat bottom;
+  background: url('/images/photos/header.jpg') no-repeat 50% 60%;
 }
 
 #logo {
   $font-size: 48px;
   @include adjust-font-size-to($font-size);
   @include text-shadow(rgba(black, .3) 0 0 5px);
-  @include rhythm(0, .5, 0, 1, $font-size);
+  @include rhythm(0, 1, 0, 1.5, $font-size);
   @include box-sizing(border-box);
-  margin-left: rhythm(.5);
-  height: rhythm(3);
+  margin-left: rhythm(.25);
+  height: rhythm(4);
   padding-left: rhythm(.5, $font-size);
   a {
     color: white;
@@ -20,16 +19,10 @@
   }
 }
 
-#social {
-  @include horizontal-list(0, right);
-  @include full;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-}
-
 nav {
+  $font-size: 20px;
   $prefix: 8.75;
+  @include adjust-font-size-to($font-size);
   @include prefix($prefix, $total-columns);
   background: rgba(white, .75);
   text-transform: uppercase;
@@ -47,5 +40,13 @@ nav {
   a, .active {
     display: block;
     padding: rhythm(.5);
+  }
+  #facebook {
+    float: right;
+    a {
+      padding-top: rhythm(.35);
+      padding-bottom: 0;
+      line-height: 0;
+    }
   }
 }
