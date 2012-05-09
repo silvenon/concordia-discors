@@ -7,16 +7,11 @@ html {
 body {
   // @include debug-vertical-alignment;
   // @include susy-grid-background;
-  margin: 0;
-  padding: 0;
+  @include container;
   @include rhythm(0, 0, 1, 0);
   overflow-y: scroll;
   font-family: $body;;
   color: $text;
-}
-
-#header, #wrapper, #footer {
-  @include container;
 }
 
 #{headings()}, p, ol, ul, table, article {

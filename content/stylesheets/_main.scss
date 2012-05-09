@@ -1,14 +1,14 @@
 [role='main'] {
   @include columns($main);
-  @include alpha;
   @include trailer;
 }
 
 time { color: lighten($text, 30%); }
 
-$cols: 9;
+$cols: 8;
 #highlight {
   @include columns($cols, $main);
+  @include push(1, $main);
   @include leader(-4);
   position: relative;
   z-index: 10;
@@ -74,10 +74,9 @@ $cols: 9;
   :last-child.img { font-size: 0; }
 }
 
-$cols: $main - $cols;
+$cols: $main - $cols - 1;
 #highlight ~ article {
-  @include columns($cols, $main);
-  @include omega($main);
+  @include columns($cols omega, $main);
   @include text-shadow(white 0 1px 0);
   h1 {
     float: left;

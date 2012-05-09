@@ -9,7 +9,7 @@
     %link{:href => '/stylesheets/app.css', :rel => 'stylesheet', :type => 'text/css'}
     %script{:src => '/zepto.min.js'}
     %script{:src => '/javascripts/helpers.js'}
-    %body{:id => @item[:id]}
+  %body{:id => @item[:id]}
     %header#header
       %h1#logo
         %a{:href => '/'}
@@ -23,16 +23,15 @@
           = list_of navigation_pages do |page|
             = link_to_unless_current page[:name], page
 
-    #wrapper
-      %div{:role => 'main'}
-        %article#highlight
-          .gradient
-            .content
-              = content_for(@item, :highlight) || nil
-        = yield
+    %div{:role => 'main'}
+      %article#highlight
+        .gradient
+          .content
+            = content_for(@item, :highlight) || nil
+      = yield
 
-      %aside
-        = content_for(@item, :sidebar) || nil
+    %aside
+      = content_for(@item, :sidebar) || nil
 
     %footer#footer
       %h1 Vanjski linkovi

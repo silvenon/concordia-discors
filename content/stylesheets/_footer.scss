@@ -1,5 +1,8 @@
 #footer {
+  @include pad(.5, .5);
   @include h-borders;
+  @include pie-clearfix;
+  clear: both;
   background: white;
   border-color: rgba(black, .2);
   img { max-height: 100%; }
@@ -8,8 +11,7 @@
 $cols: 8;
 #footer h1 {
   $font-size: 54px;
-  @include columns($cols);
-  @include omega;
+  @include columns($cols omega);
   @include adjust-font-size-to($font-size);
   @include trailer(0, $font-size);
   color: rgba(black, .25);
@@ -19,13 +21,12 @@ $cols: 8;
   }
 }
 
-$cols: $total-cols - $cols;
+$cols: $total-columns - $cols;
 #links {
   $font-size: 54px;
   $height: rhythm(3, $font-size);
   @include horizontal-list(15px);
   @include columns($cols);
-  @include alpha;
   @include adjust-font-size-to($font-size, 1.5);
   font-family: $heading;
   height: $height;

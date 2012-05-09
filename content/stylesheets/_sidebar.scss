@@ -1,6 +1,4 @@
 aside {
-  @include columns($sidebar);
-  @include omega;
   // article {
   //   @include rhythm-borders($lines: .5);
   //   @include border-radius(3px);
@@ -19,4 +17,5 @@ aside {
   //     @include adjust-font-size-to($font-size);
   //   }
   // }
+  @include columns($sidebar omega);
 }

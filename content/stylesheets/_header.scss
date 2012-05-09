@@ -7,7 +7,6 @@
 
 #logo {
   $font-size: 48px;
-  @include full;
   @include adjust-font-size-to($font-size);
   @include text-shadow(rgba(black, .3) 0 0 5px);
   @include rhythm(0, .5, 0, 1, $font-size);
@@ -30,8 +29,8 @@
 }
 
 nav {
-  $prefix: 8.85;
-  @include prefix($prefix, $total-cols);
+  $prefix: 8.75;
+  @include prefix($prefix, $total-columns);
   background: rgba(white, .75);
   text-transform: uppercase;
   ol {

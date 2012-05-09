@@ -12,7 +12,7 @@
     .photos {
       @include horizontal-list(1px);
       @include trailer(.5);
-      li { height: 314px; }
+      height: 283px;
     }
   }
 }
