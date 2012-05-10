@@ -1,8 +1,7 @@
 ---
-title: Zbor Filozofskog fakulteta u Zagrebu
-name: Početna
-id: index
-order: 0
+title: Arhiva
+name: Arhiva
+id: arhiva
 ---
 
 - highlight = sorted_articles[0]
@@ -11,11 +10,7 @@ order: 0
   = highlight.compiled_content
   %time= localize highlight[:created_at]
 
-- sorted_articles[1..3].each do |article|
+- sorted_articles[1..-1].each do |article|
   %article
     %time= localize article[:created_at]
     = article.compiled_content
-
-%article
-  %p.go
-    %a{:href => '/arhiva/'} Arhiva vijesti &rarr;
