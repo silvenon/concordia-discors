@@ -1,11 +1,11 @@
 ---
 kind: article
-created_at: 2012/5/12
+created_at: 2012/4/28
 ---
 
 # Na HRT-u se izborili u polufinale
 
-![photo](http://placekitten.com/540/240)
+![photo](/images/photos/news/dpz_6.jpg)
 
 Šestu emisiju svi su zborovi otvorili zajedničkom pjesmom -- mixom Gibonnijevih "Dobri judi" i "Oprosti".
 
