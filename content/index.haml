@@ -11,7 +11,7 @@ order: 0
   = highlight.compiled_content
   %time= localize highlight[:created_at]
 
-- sorted_articles[1..4].each do |article|
+- sorted_articles[1..3].each do |article|
   %article
     %time= localize article[:created_at]
     = article.compiled_content
