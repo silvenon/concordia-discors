@@ -1,5 +1,9 @@
+$prefix: 1;
+$suffix: 2;
+$main: $total-columns - $prefix - $suffix;
+
 [role='main'] {
-  @include span-columns($main);
+  @include pad($prefix, $suffix);
   @include trailer;
 }
 
@@ -8,7 +12,6 @@ time { color: lighten($text, 30%); }
 $cols: 8;
 #highlight {
   @include span-columns($cols, $main);
-  @include push(1, $main);
   @include leader(-4);
   position: relative;
   z-index: 10;
@@ -74,7 +77,7 @@ $cols: 8;
   :last-child.img { font-size: 0; }
 }
 
-$cols: $main - $cols - 1;
+$cols: $main - $cols;
 #highlight ~ article {
   @include span-columns($cols omega, $main);
   @include text-shadow(white 0 1px 0);
