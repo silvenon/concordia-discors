@@ -27,6 +27,7 @@ end
 compile '/stylesheets/*/' do
   # don’t filter or layout
   filter :sass, sass_options
+  filter :relativize_paths, :type => :css
 end
 
 compile '/javascripts/*/' do
@@ -50,6 +51,7 @@ compile '*' do
         filter :haml, haml_options
     end
     layout 'default'
+    filter :relativize_paths, :type => :html
   end
 end
 
