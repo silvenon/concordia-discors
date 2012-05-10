@@ -14,7 +14,7 @@ body {
   color: $text;
 }
 
-#{headings()}, p, ol, ul, table, article {
+#{headings()}, p, ol, ul, table, article, iframe {
   @include rhythm(0, 0, 0, .5);
 }
 
