@@ -89,4 +89,10 @@ $cols: $main - $cols;
     float: right;
   }
   p, ol, ul { clear: both; }
+  table {
+    @include inner-table-borders(1px, rgba(black, .1));
+    border-collapse: collapse;
+    color: lighten($text, 20%);
+  }
+  td { padding: rhythm(.5); }
 }
