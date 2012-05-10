@@ -11,7 +11,7 @@
 $cols: 8;
 #footer h1 {
   $font-size: 54px;
-  @include columns($cols omega);
+  @include span-columns($cols omega);
   @include adjust-font-size-to($font-size);
   @include trailer(0, $font-size);
   color: rgba(black, .25);
@@ -26,7 +26,7 @@ $cols: $total-columns - $cols;
   $font-size: 54px;
   $height: rhythm(3, $font-size);
   @include horizontal-list(15px);
-  @include columns($cols);
+  @include span-columns($cols);
   @include adjust-font-size-to($font-size, 1.5);
   font-family: $heading;
   height: $height;
