@@ -81,14 +81,16 @@ $cols: $main - $cols;
 #highlight ~ article {
   @include span-columns($cols omega, $main);
   @include text-shadow(white 0 1px 0);
-  h1 {
-    float: left;
-  }
-  time {
+  &, header { @include clearfix; }
+  h1{ float: left; }
+  time { @include leader(.5); }
+  img { max-height: 100%; }
+  .img, time { float: right; }
+  .img {
     @include leader(.5);
-    float: right;
+    height: rhythm(8);
+    margin-left: rhythm();
   }
-  p, ol, ul { clear: both; }
   table {
     @include inner-table-borders(1px, rgba(black, .1));
     border-collapse: collapse;

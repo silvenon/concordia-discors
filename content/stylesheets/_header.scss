@@ -9,7 +9,7 @@
   @include adjust-font-size-to($font-size);
   @include rhythm(0, 1, 0, 1.5, $font-size);
   @include text-shadow(rgba(black, .5) 1px 1px 1px);
-  height: rhythm(10);
+  height: rhythm(9);
   margin-left: rhythm(.25);
   padding-left: rhythm(.5, $font-size);
   font: {
