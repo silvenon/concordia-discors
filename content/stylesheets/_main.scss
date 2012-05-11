@@ -5,6 +5,9 @@ $main: $total-columns - $prefix - $suffix;
 [role='main'] {
   @include pad($prefix, $suffix);
   @include trailer;
+  & > :last-child {
+    @include trailer;
+  }
 }
 
 time { color: lighten($text, 30%); }

@@ -4,7 +4,7 @@
   @include trailer(0, $font-size);
   text-align: right;
   a {
-    $color1: rgba(black, .5);
+    $color1: rgba(black, .4);
     $color2: nth($colors, 5);
     @include link-colors($color1, $color2, $color2, $color1, $color2);
     padding: 0 rhythm(.25);
