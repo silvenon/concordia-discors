@@ -5,7 +5,7 @@ require 'compass'
 Compass.add_project_configuration 'compass.rb'
 
 sass_options = Compass.sass_engine_options
-haml_options = { :format => :html5 }
+haml_options = { :format => :html5, :ugly => true }
 
 # A few helpful tips about the Rules file:
 #
