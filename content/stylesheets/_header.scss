@@ -5,18 +5,23 @@
 }
 
 #logo {
-  $font-size: 48px;
+  $font-size: 20px;
   @include adjust-font-size-to($font-size);
-  @include text-shadow(rgba(black, .3) 0 0 5px);
   @include rhythm(0, 1, 0, 1.5, $font-size);
-  @include box-sizing(border-box);
+  @include text-shadow(rgba(black, .5) 1px 1px 1px);
+  height: rhythm(10);
   margin-left: rhythm(.25);
-  height: rhythm(4);
   padding-left: rhythm(.5, $font-size);
+  font: {
+    family: $body;
+    weight: normal;
+  }
+  text-transform: none;
   a {
     color: white;
     &:hover { text-decoration: none; }
   }
+  img, span { display: block; }
 }
 
 nav {
