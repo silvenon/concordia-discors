@@ -14,6 +14,12 @@ body {
   color: $text;
 }
 
+::selection, ::-moz-selection {
+  @include text-shadow(none);
+  background: nth($colors, 3);
+  color: white;
+}
+
 #{headings()}, p, ol, ul, table, article, section, iframe {
   @include rhythm(0, 0, 0, .5);
 }
