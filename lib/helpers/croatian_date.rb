@@ -18,6 +18,6 @@ module CroatianDate
 
   def localize(date_string)
     date = DateTime.parse(date_string).to_date
-    "#{date.day}. #{MONTHS[date.month]}, #{date.year}"
+    "#{date.day}. #{MONTHS[date.month]} #{date.year}"
   end
 end
