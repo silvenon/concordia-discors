@@ -8,8 +8,9 @@ order: 0
 - highlight = sorted_articles[0]
 
 - content_for :highlight do
-  = highlight.compiled_content
-  %time= localize highlight[:created_at]
+  %article.post
+    = highlight.compiled_content
+    %time= localize highlight[:created_at]
 
 - sorted_articles[1..3].each do |article|
   %article.post

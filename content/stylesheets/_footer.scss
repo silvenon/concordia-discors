@@ -1,37 +1,33 @@
 #footer {
-  @include pad(.5, .5);
-  @include h-borders;
+  @include leading-border;
   @include pie-clearfix;
   clear: both;
+  padding-left: rhythm(.25);
+  padding-right: rhythm(.25);
   background: white;
   border-color: rgba(black, .2);
   img { max-height: 100%; }
 }
 
-$cols: 8;
-#footer h1 {
-  $font-size: 54px;
-  @include span-columns($cols omega);
-  @include adjust-font-size-to($font-size);
-  @include trailer(0, $font-size);
-  color: rgba(black, .25);
-  &:before {
-    content: '\2190';
-    margin-right: .5em;
-  }
-}
-
-$cols: $total-columns - $cols;
 #links {
-  $font-size: 54px;
-  $height: rhythm(3, $font-size);
-  @include horizontal-list(15px);
-  @include span-columns($cols);
+  $font-size: 42px;
+  $height: rhythm(2, $font-size);
   @include adjust-font-size-to($font-size, 1.5);
-  font-family: $heading;
-  height: $height;
+  @include horizontal-list(10px);
+  padding: 0 rhythm(.25, $font-size);
   line-height: $height;
-  li { position: relative; }
+  li {
+    @include trailer(1, $font-size);
+    height: $height;
+  }
+  .at {
+    height: rhythm(1.25, $font-size);
+    top: $height * .25;
+  }
+  font-family: $heading;
+  li {
+    position: relative;
+  }
   a {
     $color1: darken(white, 40%);
     $color2: darken(white, 40%);
@@ -40,9 +36,7 @@ $cols: $total-columns - $cols;
   }
   .at {
     display: block;
-    height: rhythm(1.25, $font-size);
     position: absolute;
-    top: $height * .25;
     left: 0px;
   }
   .hrt {

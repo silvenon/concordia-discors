@@ -1,15 +1,22 @@
-$total-columns: 24;
+$total-columns: 4;
 $grid-padding: 0;
+$container-width: 100%;
 
-$base-font-size: 18px;
+$tablet: 30em 8;
+$desktop: 60em 16;
+$widescreen: 90em 24;
+
+$base-font-size: 16px;
 $base-line-height: 24px;
+
+$mobile-font-size: $base-font-size;
 
 $font_path: 'fontawesome-webfont';
 
 $body: 'PT Sans', 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
 $heading: 'PT Sans Narrow', $body;
 
-$colors: #D6C274 #D89E46 #25706B #3D2423 #AB362E;
+$colors: #D6C274 #D89E46 #004c54 #3D2423 #AB362E;
 
 $text: lighten(black, 30%);
 

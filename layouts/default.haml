@@ -4,6 +4,7 @@
     %meta{:charset => 'utf-8'}
     %title Concordia Discors &middot; #{@item[:title]}
     %meta{:name => 'robots', :content => 'noindex'}
+    %meta{:name => 'viewport', :content => 'width=device-width; initial-scale=1.0; maximum-scale=1.0'}
     %meta{:content => 'nanoc 3.3.6', :name => 'generator'}
     %link{:href => 'http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|PT+Sans+Narrow:700|Buenard:400,700&subset=latin,latin-ext', :rel => 'stylesheet', :type => 'text/css'}
     %link{:href => '/stylesheets/app.css', :rel => 'stylesheet', :type => 'text/css'}
@@ -19,19 +20,18 @@
         %ol
           = list_of navigation_pages do |page|
             = link_to_unless_current page[:name], page
-          %li#facebook
+          %li.facebook
             %a{:href => 'https://www.facebook.com/pages/Akademski-zbor-FFZG-Concordia-discors/160790383965096', :target => '_blank', :title => 'Concordia Discors na Facebook-u'}
               %img{:src => '/images/logo/facebook.png'}
 
     %div{:role => 'main'}
-      %article#highlight
+      %section#highlight
         .gradient
           .content
             = content_for(@item, :highlight) || nil
       = yield
 
     %footer#footer
-      %h1 Vanjski linkovi
       %ol#links
         %li
           %a{:href => 'http://www.ffzg.unizg.hr/', :title => 'Filozofski fakultet u Zagrebu', :target => '_blank'}

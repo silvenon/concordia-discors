@@ -1,17 +1,14 @@
 #header {
-  @include trailer(.5);
   @include pie-clearfix;
-  background: url('/images/photos/header.jpg') no-repeat 50% 60%;
+  background: url('/images/photos/header.jpg') no-repeat 50% 30%;
 }
 
 #logo {
-  $font-size: 20px;
+  $font-size: 18px;
   @include adjust-font-size-to($font-size);
-  @include rhythm(0, 1, 0, 1.5, $font-size);
+  @include trailer(0, $font-size);
+  padding: rhythm(.5);
   @include text-shadow(rgba(black, .5) 1px 1px 1px);
-  height: rhythm(9);
-  margin-left: rhythm(.25);
-  padding-left: rhythm(.5, $font-size);
   font: {
     family: $body;
     weight: normal;
@@ -25,10 +22,8 @@
 }
 
 nav {
-  $font-size: 20px;
-  $prefix: 8.75;
-  @include adjust-font-size-to($font-size);
-  @include prefix($prefix, $total-columns);
+  .facebook { margin-top: -5px; }
+  clear: both;
   background: rgba(white, .75);
   text-transform: uppercase;
   ol {
@@ -39,17 +34,14 @@ nav {
     $color2: rgba(black, .5);
     @include link-colors($color1, $color2, $color2, $color1, $color2);
   }
-  .active {
-    color: nth($colors, 5);
-  }
+  .active { color: nth($colors, 5); }
   a, .active {
     display: block;
-    padding: rhythm(.5);
+    padding: rhythm(.25) rhythm(.3);
   }
-  #facebook {
+  .facebook {
     float: right;
     a {
-      padding-top: rhythm(.35);
       padding-bottom: 0;
       line-height: 0;
     }

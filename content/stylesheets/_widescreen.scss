@@ -1,0 +1,71 @@
+@include at-breakpoint($widescreen, $mobile-font-size) {
+
+  $base-font-size: 18px;
+  @include establish-baseline;
+
+  body {
+    @include container;
+    @include padding-trailer;
+  }
+
+  #logo {
+    @include trailer(1);
+  }
+
+  $main: $total-columns - 2;
+  div[role='main'] {
+    @include pad(1, 1);
+  }
+
+  $cols: 8;
+  #highlight {
+    @include span-columns($cols, $main);
+    @include leader(-4);
+  }
+
+  nav { @include prefix($cols + .75); }
+
+  $cols: $main - $cols;
+  #highlight ~ article {
+    @include span-columns($cols omega, $main);
+  }
+
+  #highlight ~ .post {
+    h1{ float: left; }
+    .img, time { float: right; }
+    .img {
+      @include leader(.5);
+      margin-left: rhythm();
+    }
+  }
+
+  footer {
+    @include h-borders;
+  }
+
+  #links {
+    $font-size: 62px;
+    $height: rhythm(4, $font-size);
+    @include adjust-font-size-to($font-size);
+    li {
+      @include trailer(0, $font-size);
+      margin: 0 10px;
+      height: $height;
+      line-height: $height;
+    }
+  }
+
+  #albums {
+    img { max-height: 100%; }
+    ul { @include horizontal-list(2px); }
+    li {
+      height: rhythm(10);
+      margin: 0 0 2px 0;
+    }
+    a {
+      @include opacity(.8);
+      &:hover { @include opacity(1); }
+    }
+  }
+
+}

@@ -1,0 +1,36 @@
+@include at-breakpoint($desktop, $mobile-font-size) {
+
+  $base-font-size: 18px;
+  @include establish-baseline;
+
+  body {
+    @include container;
+  }
+
+  #header { @include trailer(.5); }
+
+  nav {
+    $font-size: 20px;
+    @include adjust-font-size-to($font-size);
+    a, .active { padding: rhythm(.5); }
+  }
+
+  $cols: 7;
+  #highlight {
+    @include span-columns($cols);
+  }
+  $cols: $total-columns - $cols;
+  #highlight ~ article {
+    @include span-columns($cols omega);
+    @include box-sizing(border-box);
+    padding: 0 rhythm(.5) 0 0;
+  }
+
+  #albums {
+    a {
+      @include opacity(.8);
+      &:hover { @include opacity(1); }
+    }
+  }
+
+}

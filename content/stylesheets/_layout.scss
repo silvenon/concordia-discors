@@ -8,13 +8,15 @@ body {
   // @include debug-vertical-alignment;
   // @include susy-grid-background;
   @include container;
-  @include rhythm(0, 0, 1, 0);
+  -webkit-text-size-adjust: none;
+  padding: 0;
+  margin: 0;
   overflow-y: scroll;
   font-family: $body;;
   color: $text;
 }
 
-#{headings()}, p, ol, ul, table, article, iframe {
+#{headings()}, p, ol, ul, table, article, section, iframe {
   @include rhythm(0, 0, 0, .5);
 }
 

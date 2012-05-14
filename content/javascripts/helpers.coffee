@@ -1,6 +1,6 @@
 Zepto ->
-  $('article > p').each ->
+  $('article p').each ->
     if $(@).find('img').length > 0
       $(@).addClass 'img'
-  $('.post').each ->
+  $('.post').not('#highlight .post').each ->
     $('time, h1', $(@)).wrapAll '<header></header>'
