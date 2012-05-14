@@ -1,0 +1,8 @@
+#arhiva {
+  #header { @include trailer; }
+  .post {
+    padding-left: rhythm(.5);
+    padding-right: rhythm(.5);
+  }
+  .left .post:last-of-type { border-bottom: 1px dashed rgba(black, .2); }
+}

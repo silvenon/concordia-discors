@@ -23,13 +23,29 @@
   #highlight ~ article {
     @include span-columns($cols omega);
     @include box-sizing(border-box);
-    padding: 0 rhythm(.5) 0 0;
+    padding-left: 0;
+    padding-right: rhythm(.5);
   }
 
   #albums {
     a {
       @include opacity(.8);
       &:hover { @include opacity(1); }
+    }
+  }
+
+  #arhiva {
+    $cols: $total-columns / 2;
+    .left, .right { @include span-columns($cols); }
+    .left {
+      @include trailer(.5);
+      @include box-sizing(border-box);
+      border-right: 1px solid rgba(black, .25);
+      .post:last-of-type { border: 0; }
+    }
+    .right {
+      @include omega;
+      .post { margin-left: - gutter($cols); }
     }
   }
 

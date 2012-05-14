@@ -1,14 +1,13 @@
-#highlight ~ .post {
+.post {
+  @include trailing-border($lines: .5, $border-style: dashed);
+  @include trailer;
+  border-color: rgba(black, .2);
+  &:last-of-type { border: 0; }
   &, header { @include clearfix; }
   h1{ float: left; }
-  time {
-    @include leader(.5);
-    display: block;
-  }
+  time { display: block; }
   img { max-height: 100%; }
-  .img {
-    height: rhythm(8);
-  }
+  .img { height: rhythm(8); }
 }
 
 .go {

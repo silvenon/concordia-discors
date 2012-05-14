@@ -25,10 +25,11 @@
               %img{:src => '/images/logo/facebook.png'}
 
     %div{:role => 'main'}
-      %section#highlight
-        .gradient
-          .content
-            = content_for(@item, :highlight) || nil
+      - if content_for(@item, :highlight)
+        %section#highlight
+          .gradient
+            .content
+              = content_for(@item, :highlight)
       = yield
 
     %footer#footer

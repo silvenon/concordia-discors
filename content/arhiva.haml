@@ -4,13 +4,16 @@ name: Arhiva
 id: arhiva
 ---
 
-- highlight = sorted_articles[0]
+- half = sorted_articles.length / 2
 
-- content_for :highlight do
-  = highlight.compiled_content
-  %time= localize highlight[:created_at]
+.left
+  - sorted_articles[0...half].each do |article|
+    %article.post
+      %time= localize article[:created_at]
+      = article.compiled_content
 
-- sorted_articles[1..-1].each do |article|
-  %article
-    %time= localize article[:created_at]
-    = article.compiled_content
+.right
+  - sorted_articles[half..-1].each do |article|
+    %article.post
+      %time= localize article[:created_at]
+      = article.compiled_content

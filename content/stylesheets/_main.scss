@@ -65,14 +65,15 @@ time { color: lighten($text, 30%); }
   :last-child.img { font-size: 0; }
 }
 
-#highlight ~ article {
+[role='main'] > article {
   @include text-shadow(white 0 1px 0);
   clear: right;
-  padding: 0 rhythm(.5);
+  padding-left: rhythm(.5);
+  padding-right: rhythm(.5);
   h1 {
     $font-size: 28px;
-    @include adjust-font-size-to($font-size);
-    @include trailer(0, $font-size);
+    @include adjust-font-size-to($font-size, 1.5);
+    @include trailer(.5, $font-size);
   }
   table {
     @include inner-table-borders(1px, rgba(black, .1));
