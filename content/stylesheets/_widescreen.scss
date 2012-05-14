@@ -21,6 +21,11 @@
   #highlight {
     @include span-columns($cols, $main);
     @include leader(-4);
+    h1 {
+      $font-size: 62px;
+      @include adjust-font-size-to($font-size);
+      @include trailer(1, $font-size);
+    }
   }
 
   nav { @include prefix($cols + .75); }

@@ -18,6 +18,11 @@
   $cols: 7;
   #highlight {
     @include span-columns($cols);
+    h1 {
+      $font-size: 54px;
+      @include adjust-font-size-to($font-size);
+      @include trailer(1, $font-size);
+    }
   }
   $cols: $total-columns - $cols;
   #highlight ~ article {
@@ -25,6 +30,10 @@
     @include box-sizing(border-box);
     padding-left: 0;
     padding-right: rhythm(.5);
+  }
+
+  .go {
+    @include span-columns($cols omega);
   }
 
   #albums {

@@ -11,9 +11,8 @@
 }
 
 .go {
-  $font-size: 20px;
-  @include adjust-font-size-to($font-size);
-  @include trailer(0, $font-size);
+  @include trailer;
+  clear: right;
   text-align: right;
   a {
     $color1: rgba(black, .4);
