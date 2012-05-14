@@ -28,7 +28,10 @@ body {
   font: {
     family: $heading;
   }
-  text-transform: uppercase;
+  text: {
+    transform: uppercase;
+    rendering: optimizeLegibility
+  }
 }
 
 strong {
