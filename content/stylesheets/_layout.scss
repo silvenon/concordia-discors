@@ -1,8 +1,6 @@
 @include establish-baseline;
 
-html {
-  background: darken(white, 5%);
-}
+html { background: darken(white, 5%); }
 
 body {
   // @include debug-vertical-alignment;
