@@ -6,21 +6,17 @@ order: 3
 ---
 
 - content_for :highlight do
-  %h1 Dirigenti
-  %table
-    %tr
-      %td Jurica Bošković
-      %td očinska figura
-    %tr
-      %td Vinko Karmelić
-      %td štreber
-    %tr
-      %td Marina Jurković
-      %td bećaruša
-    %tr
-      %td Lobel Filipić
-      %td mlada nada
-  %img{:src => '/images/photos/dirigenti.jpg'}
+  :markdown
+    # Dirigenti
+
+    Ime             | Uloga
+    --------------- | ----------------
+    Jurica Bošković | očinska figura
+    Vinko Karmelić  | štreber
+    Marina Jurković | bećaruša
+    Lobel Filipić   | mlada nada
+
+    ![Slika dirigenata](/images/photos/dirigenti.jpg)
 
 %article
   :markdown

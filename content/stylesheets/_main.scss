@@ -56,11 +56,11 @@ time { color: lighten($text, 30%); }
     @include trailer(.5);
     width: 100%;
     border-collapse: collapse;
-    tr:nth-child(2n+1) {
-      background: rgba(nth($colors, 3), .1);
-    }
-    td:nth-child(2) { color: nth($colors, 3); }
   }
+  tr:nth-child(2n+1) { background: rgba(nth($colors, 3), .1); }
+  td:nth-child(2) { color: nth($colors, 3); }
+  th { text-align: left; }
+  thead tr:first-child { background: transparent; }
   :last-child { @include trailer(0); }
   :last-child.img { font-size: 0; }
 }
