@@ -39,6 +39,10 @@ compile '/static/*' do
   # copy as is
 end
 
+compile '/news/feed/' do
+  filter :haml, haml_options
+end
+
 compile '/news/*/' do
   filter :maruku
   layout 'post'
@@ -77,6 +81,10 @@ end
 route '/static/*' do
   # /static/foo.html/ → /foo.html
   item.identifier[7..-2]
+end
+
+route '/news/feed/' do
+  '/feed.xml'
 end
 
 route '*' do
