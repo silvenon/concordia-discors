@@ -6,13 +6,16 @@
 #logo {
   $font-size: 18px;
   @include adjust-font-size-to($font-size);
-  @include trailer(0, $font-size);
-  padding: rhythm(.5);
+  @include rhythm(0, .5, .5, 0, $font-size);
   @include text-shadow(rgba(black, .5) 1px 1px 1px);
+  @include pie-clearfix;
+  padding-left: rhythm(.5, $font-size);
+  padding-right: rhythm(.5, $font-size);
   font: {
     family: $body;
     weight: normal;
   }
+  text-align: center;
   text-transform: none;
   a {
     color: white;
