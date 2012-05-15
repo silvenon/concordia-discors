@@ -29,9 +29,7 @@ nav {
   clear: both;
   background: rgba(white, .75);
   text-transform: uppercase;
-  ol {
-    @include horizontal-list(0);
-  }
+  ol { @include horizontal-list(0); }
   a {
     $color1: rgba(black, .3);
     $color2: rgba(black, .5);
