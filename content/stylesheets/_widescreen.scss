@@ -33,7 +33,8 @@
   $cols: $main - $cols;
   #highlight ~ article {
     @include span-columns($cols omega, $main);
-    padding: 0;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   [role='main'] > .post {
@@ -75,7 +76,7 @@
     }
   }
 
-  #arhiva {
+  #arhiva, #article {
     .post {
       @include pad(0, 0);
       @include post(9);

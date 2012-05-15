@@ -1,0 +1,32 @@
+.post h1 a {
+  $color1: rgba(nth($colors, 3), .75);
+  $color2: nth($colors, 3);
+  @include link-colors($color1, $color2, $color2, $color1, $color2);
+}
+
+time {
+  display: block;
+  color: lighten($text, 30%);
+}
+
+[role='main'] > .post {
+  @include trailing-border($lines: .5, $border-style: dashed);
+  @include trailer;
+  border-color: rgba(black, .2);
+  &:last-of-type {
+    @include padding-trailer(0);
+    border: 0;
+  }
+  &, header { @include clearfix; }
+  img { max-height: 100%; }
+  .img { height: rhythm(8); }
+}
+
+#arhiva, #article {
+  #header { @include trailer; }
+  .post {
+    padding-left: rhythm(.5);
+    padding-right: rhythm(.5);
+    &:last-of-type { @include padding-trailer(0); }
+  }
+}

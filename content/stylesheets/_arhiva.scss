@@ -1,8 +1,0 @@
-#arhiva {
-  #header { @include trailer; }
-  .post {
-    padding-left: rhythm(.5);
-    padding-right: rhythm(.5);
-    &:last-child { @include padding-trailer(0); }
-  }
-}

@@ -1,9 +1,8 @@
 ---
+title: Na HRT-u u 6 NAJBOLJIH!!!
 kind: article
 created_at: 2012/4/8
 ---
-
-# Na HRT-u u 6 NAJBOLJIH!!!
 
 Nakon prolaska u 15 najboljih, Concordia Discors izborila se za prolazak u najboljih 6 zborova na natjecanju "Do posljednjeg zbora". Ako ste propustili naš nastup, možete ga pogledati [ovdje](http://youtu.be/OYoTi5-zxbM).
 

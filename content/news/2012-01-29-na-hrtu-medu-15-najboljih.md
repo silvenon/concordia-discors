@@ -1,9 +1,8 @@
 ---
+title: Na HRT-u među 15 najboljih!!!
 kind: article
 created_at: 2012/1/29
 ---
-
-# Na HRT-u među 15 najboljih!!!
 
 Akademski zbor Concordia discors odabran je u petnaest najboljih na kvalifikacijama za natjecanje "Do posljednjeg zbora"!
 

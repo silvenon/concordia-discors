@@ -43,7 +43,7 @@
     }
   }
 
-  #arhiva {
+  #arhiva, #article {
     .post {
       @include pad(1, 4);
       .img {

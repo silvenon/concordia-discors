@@ -12,7 +12,7 @@
     %script{:src => '/javascripts/zepto.fittext.js'}
     %script{:src => '/javascripts/helpers.js'}
     %script{:src => '/javascripts/responsive.js'}
-  %body{:id => @item[:id]}
+    %body{:id => @item[:id] || @item[:kind]}
     %header#header
       %h1#logo
         %a{:href => '/'}
