@@ -36,7 +36,7 @@
     padding: 0;
   }
 
-  .post {
+  [role='main'] > .post {
     h1{ float: left; }
     .img, time { float: right; }
     .img {
@@ -76,26 +76,9 @@
   }
 
   #arhiva {
-    nav { @include prefix(0); }
-    $cols: $main / 2;
-    .left, .right { @include span-columns($cols, $main); }
-    .left {
-      .post {
-        padding-left: 0;
-        padding-right: rhythm();
-      }
-    }
-    .right {
-      @include omega;
-      .post {
-        padding-left: rhythm();
-        padding-right: 0;
-        margin-left: - gutter($cols);
-      }
-    }
     .post {
-      h1, time { float: none; }
-      time { text-align: left; }
+      @include pad(0, 0);
+      @include post(9);
     }
   }
 

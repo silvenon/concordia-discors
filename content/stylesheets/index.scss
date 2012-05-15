@@ -1,8 +1,11 @@
-.post {
+[role='main'] > .post {
   @include trailing-border($lines: .5, $border-style: dashed);
   @include trailer;
   border-color: rgba(black, .2);
-  &:last-of-type { border: 0; }
+  &:last-of-type {
+    @include padding-trailer(0);
+    border: 0;
+  }
   &, header { @include clearfix; }
   h1{ float: left; }
   time { display: block; }

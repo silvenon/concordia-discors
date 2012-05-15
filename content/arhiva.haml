@@ -4,16 +4,7 @@ name: Arhiva
 id: arhiva
 ---
 
-- half = sorted_articles.length / 2
-
-.left
-  - sorted_articles[0...half].each do |article|
-    %article.post
-      %time= localize article[:created_at]
-      = article.compiled_content
-
-.right
-  - sorted_articles[half..-1].each do |article|
-    %article.post
-      %time= localize article[:created_at]
-      = article.compiled_content
+- sorted_articles.each do |article|
+  %article.post
+    %time= localize article[:created_at]
+    = article.compiled_content

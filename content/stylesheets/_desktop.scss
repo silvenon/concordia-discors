@@ -44,17 +44,12 @@
   }
 
   #arhiva {
-    $cols: $total-columns / 2;
-    .left, .right { @include span-columns($cols); }
-    .left {
-      @include trailer(.5);
-      @include box-sizing(border-box);
-      border-right: 1px solid rgba(black, .25);
-      .post:last-of-type { border: 0; }
-    }
-    .right {
-      @include omega;
-      .post { margin-left: - gutter($cols); }
+    .post {
+      @include pad(1, 4);
+      .img {
+        float: right;
+        margin-left: rhythm(.5);
+      }
     }
   }
 

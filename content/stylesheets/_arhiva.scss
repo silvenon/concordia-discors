@@ -3,6 +3,6 @@
   .post {
     padding-left: rhythm(.5);
     padding-right: rhythm(.5);
+    &:last-child { @include padding-trailer(0); }
   }
-  .left .post:last-of-type { border-bottom: 1px dashed rgba(black, .2); }
 }
