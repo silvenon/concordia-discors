@@ -39,11 +39,11 @@ compile '/static/*' do
   # copy as is
 end
 
-compile '/news/feed/' do
+compile '/vijesti/feed/' do
   filter :haml, haml_options
 end
 
-compile '/news/*/' do
+compile '/vijesti/*/' do
   filter :maruku
   layout 'post'
   layout 'default'
@@ -83,7 +83,7 @@ route '/static/*' do
   item.identifier[7..-2]
 end
 
-route '/news/feed/' do
+route '/vijesti/feed/' do
   '/feed.xml'
 end
 
