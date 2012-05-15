@@ -1,7 +1,4 @@
-@include at-breakpoint($widescreen, $mobile-font-size) {
-
-  $base-font-size: 18px;
-  @include establish-baseline;
+@include at-breakpoint($widescreen) {
 
   body {
     @include container;

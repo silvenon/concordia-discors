@@ -1,7 +1,4 @@
-@include at-breakpoint($desktop, $mobile-font-size) {
-
-  $base-font-size: 18px;
-  @include establish-baseline;
+@include at-breakpoint($desktop) {
 
   body {
     @include container;
@@ -10,8 +7,6 @@
   #header { @include trailer(.5); }
 
   nav {
-    $font-size: 20px;
-    @include adjust-font-size-to($font-size);
     a, .active { padding: rhythm(.5); }
   }
 

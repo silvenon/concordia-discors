@@ -1,18 +1,10 @@
-@include at-breakpoint($tablet, $mobile-font-size) {
-
-  $base-font-size: 18px;
-  @include establish-baseline;
+@include at-breakpoint($tablet) {
 
   body {
     @include container;
   }
 
   #logo { text-align: left; }
-
-  nav {
-    $font-size: 20px;
-    @include adjust-font-size-to($font-size);
-  }
 
   #links {
     $font-size: 54px;
