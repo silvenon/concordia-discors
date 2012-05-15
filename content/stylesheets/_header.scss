@@ -47,3 +47,14 @@ nav {
     }
   }
 }
+
+#screen-width {
+  width: 80px;
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  right: 0;
+  text-align: center;
+  background: rgba(black, .75);
+  color: white;
+}
