@@ -2,6 +2,7 @@ source :rubygems
 
 gem 'nanoc'
 gem 'adsf'
+gem 'thin'
 gem 'mime-types'
 
 gem 'guard-livereload'
