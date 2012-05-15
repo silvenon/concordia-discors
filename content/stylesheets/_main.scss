@@ -74,7 +74,7 @@
     @include trailer(.5, $font-size);
   }
   table {
-    @include inner-table-borders(1px, rgba(black, .1));
+    @include inner-table-borders(1px, darken(white, 20%));
     border-collapse: collapse;
     color: lighten($text, 20%);
   }
