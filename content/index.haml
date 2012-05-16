@@ -14,7 +14,7 @@ order: 0
     %time= localize highlight[:created_at]
 
 - sorted_articles[1..3].each do |article|
-  = render 'post', :item => article, :index => true do
+  = render 'post', :item => article, :link => true do
     = article.compiled_content
 
 .go

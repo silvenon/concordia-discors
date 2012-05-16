@@ -2,7 +2,7 @@
   %header
     %time= localize @item[:created_at]
     %h1
-      - if @index
+      - if @link
         = link_to @item[:title], @item
       - else
         = @item[:title]
