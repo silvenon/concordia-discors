@@ -4,7 +4,10 @@
     @include container;
   }
 
-  #header { @include trailer(.5); }
+  #header {
+    @include trailer(.5);
+    background-image: url('/images/photos/desktop/header.jpg');
+  }
 
   nav {
     a, .active { padding: rhythm(.5); }

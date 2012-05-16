@@ -4,6 +4,10 @@
     @include container;
   }
 
+  #header {
+    background-image: url('/images/photos/tablet/header.jpg');
+  }
+
   #logo { text-align: left; }
 
   [role='main'] > .post {

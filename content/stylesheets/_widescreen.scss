@@ -5,6 +5,10 @@
     @include padding-trailer;
   }
 
+  #header {
+    background-image: url('/images/photos/widescreen/header.jpg');
+  }
+
   #logo {
     @include trailer(1);
   }
