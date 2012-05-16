@@ -38,7 +38,7 @@
     h1{ float: left; }
     .img, time { float: right; }
     .img {
-      @include leader(.5);
+      @include rhythm(.25, 0, 0, .25);
       margin-left: rhythm();
     }
     time { @include leader(.5); }

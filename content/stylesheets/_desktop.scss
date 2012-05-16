@@ -41,10 +41,14 @@
   #arhiva, #article {
     .post {
       @include pad(1, 4);
-      .img {
-        float: right;
-        margin-left: rhythm(.5);
-      }
+    }
+  }
+
+  #article {
+    .img {
+      float: none;
+      height: auto;
+      margin-left: 0;
     }
   }
 
