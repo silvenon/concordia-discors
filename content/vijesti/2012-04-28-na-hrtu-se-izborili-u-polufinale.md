@@ -4,7 +4,7 @@ kind: article
 created_at: 2012/4/28
 ---
 
-![photo](/images/photos/news/dpz_6.jpg)
+![slika s emisije](/images/photos/news/dpz_6.jpg)
 
 Šestu emisiju svi su zborovi otvorili zajedničkom pjesmom -- mixom Gibonnijevih "Dobri judi" i "Oprosti".
 
