@@ -20,10 +20,6 @@
     @include trailer(1, $font-size);
     height: $height;
   }
-  .at {
-    height: rhythm(1.25, $font-size);
-    top: $height * .25;
-  }
   font-family: $heading;
   li {
     position: relative;
@@ -38,6 +34,7 @@
     display: block;
     position: absolute;
     left: 0px;
+    top: $height * .2;
   }
   .hrt {
     @include border-radius(5px);
