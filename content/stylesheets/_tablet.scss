@@ -15,7 +15,7 @@
     .img { height: rhythm(10); }
   }
 
-  #links {
+  #footer {
     $font-size: 54px;
     $height: rhythm(3, $font-size);
     @include adjust-font-size-to($font-size);
@@ -25,7 +25,7 @@
     }
   }
 
-  #albums {
+  #multimedija [role='main'] > article {
     li { max-width: rhythm(20); }
   }
 

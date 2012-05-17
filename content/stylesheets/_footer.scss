@@ -1,35 +1,27 @@
 #footer {
+  $font-size: 42px;
+  $height: rhythm(2, $font-size);
   @include leading-border;
+  @include adjust-font-size-to($font-size, 1.5);
   @include pie-clearfix;
   clear: both;
   padding-left: rhythm(.25);
   padding-right: rhythm(.25);
+  font-family: $heading;
+  line-height: $height;
   background: white;
   border-color: rgba(black, .2);
   img { max-height: 100%; }
-}
-
-#links {
-  $font-size: 42px;
-  $height: rhythm(2, $font-size);
-  @include adjust-font-size-to($font-size, 1.5);
-  @include horizontal-list(10px);
-  padding: 0 rhythm(.25, $font-size);
-  line-height: $height;
+  ol {
+    @include horizontal-list(10px);
+    padding: 0 rhythm(.25, $font-size);
+  }
   li {
     @include trailer(1, $font-size);
     height: $height;
-  }
-  font-family: $heading;
-  li {
     position: relative;
   }
-  a {
-    $color1: darken(white, 40%);
-    $color2: darken(white, 40%);
-    @include link-colors($color1, $color2, $color2, $color1, $color2);
-    &:hover { text-decoration: none; }
-  }
+  a:hover { text-decoration: none; }
   .at {
     display: block;
     position: absolute;
@@ -39,9 +31,9 @@
   .hrt {
     @include border-radius(5px);
     @include box-sizing(border-box);
-    display: block;
     padding: 5px;
     background: white;
     border: 1px solid rgba(black, .2);
   }
+
 }

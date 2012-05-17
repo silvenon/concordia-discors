@@ -64,7 +64,7 @@
     }
   }
 
-  #albums {
+  #multimedija [role='main'] > article {
     li {
       @include span-columns($cols / 2, $cols);
       margin-bottom: 0 0 gutter($cols) 0;

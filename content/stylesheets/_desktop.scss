@@ -38,7 +38,7 @@
     @include span-columns($cols omega, $main);
   }
 
-  #albums {
+  #multimedija [role='main'] > article {
     li {
       @include span-columns($cols / 2, $cols);
       margin-bottom: gutter($cols);
