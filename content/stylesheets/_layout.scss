@@ -49,6 +49,10 @@ a {
   @include link-colors($link1, $link2, $link2, $link1, $link2);
 }
 
+ul, ol {
+  li { padding-left: rhythm(.25); }
+}
+
 img, iframe {
   max-width: 100%;
 }
