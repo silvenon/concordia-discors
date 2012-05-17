@@ -65,15 +65,9 @@
   }
 
   #albums {
-    img { max-height: 100%; }
-    ul { @include horizontal-list(2px); }
     li {
-      height: rhythm(10);
-      margin: 0 0 2px 0;
-    }
-    a {
-      @include opacity(.8);
-      &:hover { @include opacity(1); }
+      @include span-columns($cols / 2, $cols);
+      margin-bottom: 0 0 gutter($cols) 0;
     }
   }
 

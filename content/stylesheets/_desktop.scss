@@ -39,6 +39,19 @@
   }
 
   #albums {
+    li {
+      @include span-columns($cols / 2, $cols);
+      margin-bottom: gutter($cols);
+      &:nth-child(2n+1) {
+        float: left;
+        clear: left;
+      }
+      &:nth-child(2n) {
+        @include omega;
+        float: right;
+        clear: right;
+      }
+    }
     a {
       @include opacity(.8);
       &:hover { @include opacity(1); }
