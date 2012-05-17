@@ -4,7 +4,7 @@ kind: article
 created_at: 2012/4/8
 ---
 
-Nakon prolaska u 15 najboljih, Concordia Discors izborila se za prolazak u najboljih 6 zborova na natjecanju "Do posljednjeg zbora". Ako ste propustili naš nastup, možete ga pogledati [ovdje](http://youtu.be/OYoTi5-zxbM).
+Nakon prolaska u 15 najboljih, Concordia discors izborila se za prolazak u najboljih 6 zborova na natjecanju "Do posljednjeg zbora". Ako ste propustili naš nastup, možete ga pogledati [ovdje](http://youtu.be/OYoTi5-zxbM).
 
 Pratite kako će ova raspjevana družina proći u prvoj emisiji uživo ove subote 14. travnja u 20.15 na Prvome programu i glasajte za Vaš omiljeni zbor :)
 
