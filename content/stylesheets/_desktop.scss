@@ -13,25 +13,29 @@
     a, .active { padding: rhythm(.5); }
   }
 
+  $main: $total-columns - 1;
+  [role='main'] {
+    @include pad(.5, .5);
+  }
+
   $cols: 7;
   #highlight {
-    @include span-columns($cols);
+    @include span-columns($cols, $main);
     h1 {
       $font-size: 54px;
       @include adjust-font-size-to($font-size);
       @include trailer(1, $font-size);
     }
   }
-  $cols: $total-columns - $cols;
   #highlight ~ article {
-    @include span-columns($cols omega);
     @include box-sizing(border-box);
     padding-left: 0;
-    padding-right: rhythm(.5);
+    padding-right: 0;
   }
 
-  .go {
-    @include span-columns($cols omega);
+  $cols: $main - $cols;
+  #highlight ~ article, .go {
+    @include span-columns($cols omega, $main);
   }
 
   #albums {
@@ -43,7 +47,7 @@
 
   #arhiva, #article {
     .post {
-      @include pad(1, 4);
+      @include suffix(4, $main);
     }
   }
 

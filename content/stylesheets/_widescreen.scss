@@ -79,8 +79,8 @@
 
   #arhiva, #article {
     .post {
-      @include pad(0, 0);
-      @include post(9);
+      @include suffix(0, $main);
+      @include post(9, $main);
     }
   }
 
