@@ -37,11 +37,14 @@ nav {
   .active { color: nth($colors, 5); }
   a, .active {
     display: block;
-    padding: rhythm(.25) rhythm(.3);
+    padding: rhythm(.25);
   }
+  .no-rgba & {
+    background: darken(white, 15%);
     a {
-      padding-bottom: 0;
-      line-height: 0;
+      $color1: darken(white, 40%);
+      $color2: darken(white, 60%);
+      @include link-colors($color1, $color2, $color2, $color1, $color2);
     }
   }
 }
