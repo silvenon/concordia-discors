@@ -23,9 +23,6 @@
         %ol
           = list_of navigation_pages do |page|
             = link_to_unless_current page[:name], page
-          %li.facebook
-            %a{:href => 'https://www.facebook.com/pages/Akademski-zbor-FFZG-Concordia-discors/160790383965096', :target => '_blank', :title => 'Concordia Discors na Facebook-u'}
-              %img{:src => '/images/logo/facebook.png'}
 
     %div{:role => 'main'}
       - if content_for(@item, :highlight)

@@ -25,7 +25,6 @@
 }
 
 nav {
-  .facebook { margin-top: -5px; }
   clear: both;
   background: rgba(white, .75);
   text-transform: uppercase;
@@ -40,8 +39,6 @@ nav {
     display: block;
     padding: rhythm(.25) rhythm(.3);
   }
-  .facebook {
-    float: right;
     a {
       padding-bottom: 0;
       line-height: 0;
