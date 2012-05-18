@@ -1,6 +1,6 @@
 %article.post
   %header
-    %time= localize @item[:created_at]
+    %time{:datetime => DateTime.parse(@item[:created_at]).to_date.to_s, :pubdate => true}= localize @item[:created_at]
     %h1
       - if @link
         = link_to @item[:title], @item
