@@ -76,7 +76,8 @@
     }
     a {
       $font-size: 54px;
-      @include rhythm-borders($lines: 6.5, $font-size: $font-size);
+      @include h-borders($lines: 6.5, $font-size: $font-size);
+      @include v-borders($lines: 1, $font-size: $font-size);
       @include adjust-font-size-to($font-size);
     }
   }

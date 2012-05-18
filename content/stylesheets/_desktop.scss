@@ -90,7 +90,8 @@
       $font-size: 48px;
       $color1: rgba(white, .75);
       $color2: white;
-      @include rhythm-borders($lines: 5, $font-size: $font-size);
+      @include h-borders($lines: 5, $font-size: $font-size);
+      @include v-borders($lines: 1, $font-size: $font-size);
       @include adjust-font-size-to($font-size);
       @include link-colors($color1, $color2, $color2, $color1, $color2);
       @include opacity(.5);
