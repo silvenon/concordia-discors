@@ -17,5 +17,4 @@ order: 0
   = render 'post', :item => article, :link => true do
     = article.compiled_content
 
-.go
-  %a{:href => '/arhiva/'} Arhiva vijesti &rarr;
+.go= link_to 'Arhiva vijesti &rarr;', @items.find { |item| item[:id] == 'arhiva' }
