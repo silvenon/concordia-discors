@@ -32,10 +32,6 @@
     margin-right: auto;
   }
 
-  [role='main'] > .post {
-    .img { width: rhythm(15); }
-  }
-
   #footer {
     $font-size: 54px;
     $height: rhythm(3, $font-size);

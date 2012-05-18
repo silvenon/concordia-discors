@@ -6,4 +6,7 @@
         = link_to @item[:title], @item
       - else
         = @item[:title]
+  - if @item[:image]
+    %p
+      %img{:src => "/images/vijesti/#{@item[:image]}#{'_small' if @small}.jpg"}
   = yield

@@ -4,5 +4,5 @@ id: arhiva
 ---
 
 - sorted_articles.each do |article|
-  = render 'post', :item => article, :link => true do
+  = render 'post', :item => article, :link => true, :small => true do
     = article.compiled_content

@@ -2,9 +2,8 @@
 title: Prošli smo u TOP 5!
 kind: article
 created_at: 2012/4/15
+image: dpz-5
 ---
-
-![slika s emisije](/images/vijesti/dpz-5.jpg)
 
 U prvoj emisiji uživo Concordia discors je oduševila izvedbom "Zagorske" J.S.Slavenskog. Nakon napetog iščekivanja rezultata, prošli smo dalje bez pripetavanja.
 
