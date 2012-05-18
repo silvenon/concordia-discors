@@ -14,22 +14,30 @@ order: 3
     :markdown
       Ako želite vidjeti još naših nastupa, [potražite nas](http://www.youtube.com/results?search_query=concordia+discors&oq=concordia+discors&aq=f&aqi=g10&aql=&gs_l=youtube-psuggest.3..0l10.268.3307.0.3421.17.12.0.5.5.0.125.1102.3j9.12.0...0.0.) na YouTube-u.
 
+:ruby
+  links = [
+    {
+      :name => 'Strike a pose',
+      :url => 'https://www.facebook.com/media/set/?set=a.371744682869664.87977.160790383965096&type=3',
+      :class => 'strike-a-pose'
+    }, {
+      :name => 'Gostovanje na koncertu zbora Vladimir Prelog',
+      :url => 'https://www.facebook.com/media/set/?set=a.361593283884804.85792.160790383965096&type=3',
+      :class => 'zbor-vladimir-prelog'
+    }, {
+      :name => '1. susret pjevačkih zborova fakulteta Sveučilišta u Zagrebu',
+      :url => 'https://www.facebook.com/media/set/?set=a.207990372578430.55815.160790383965096&type=3',
+      :class => 'susret-pjevackih-zborova'
+    }, {
+      :name => 'Božićni koncert u Zagrebu',
+      :url => 'https://www.facebook.com/media/set/?set=a.163069520403849.32808.160790383965096&type=3',
+      :class => 'bozicni-koncert'
+    }
+  ]
+
 %article
   %h1 Slike
   %ul
-    %li
-      %a{:href => 'https://www.facebook.com/media/set/?set=a.371744682869664.87977.160790383965096&type=3', :target => '_blank'}
-        %img{:src => '/images/multimedija/strike_a_pose.jpg'}
-        %span Strike a pose
-    %li
-      %a{:href => 'https://www.facebook.com/media/set/?set=a.361593283884804.85792.160790383965096&type=3', :target => '_blank'}
-        %img{:src => '/images/multimedija/zbor_vladimir_prelog.jpg'}
-        %span Gostovanje na koncertu zbora Vladimir Prelog
-    %li
-      %a{:href => 'https://www.facebook.com/media/set/?set=a.207990372578430.55815.160790383965096&type=3', :target => '_blank'}
-        %img{:src => '/images/multimedija/susret_pjevackih_zborova.jpg'}
-        %span 1. susret pjevačkih zborova fakulteta Sveučilišta u Zagrebu
-    %li
-      %a{:href => 'https://www.facebook.com/media/set/?set=a.163069520403849.32808.160790383965096&type=3', :target => '_blank'}
-        %img{:src => '/images/multimedija/bozicni_koncert.jpg'}
-        %span Božićni koncert u Zagrebu
+    - links.each_with_index do |link, i|
+      %li
+        = link_to link[:name], link[:url], :class => link[:class]

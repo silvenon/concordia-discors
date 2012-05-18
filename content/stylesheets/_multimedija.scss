@@ -7,15 +7,17 @@
   }
   a {
     @include rhythm-borders($lines: .5);
+    @include text-shadow(none);
+    @include box-shadow(rgba(black, .5) 0 0 7px);
     display: block;
     background: white;
-    border-color: rgba(black, .2);
+    border-color: white;
     &:before {
       content: url('/images/logo/facebook.png');
       display: block;
       position: absolute;
-      bottom: 0px;
-      right: 12px;
+      top: 6px;
+      right: 6px;
     }
   }
   span {

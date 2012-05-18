@@ -62,7 +62,6 @@
       @include opacity(.8);
       &:hover {
         @include opacity(1);
-        border-color: rgba(black, .4);
         text-decoration: none;
       }
     }
