@@ -9,6 +9,10 @@
     background-image: url('/images/header_desktop.jpg');
   }
 
+  #logo {
+    margin:0;
+  }
+
   nav {
     a, .active { padding: rhythm(.5); }
   }
@@ -29,6 +33,7 @@
   }
   #highlight ~ article {
     @include box-sizing(border-box);
+    max-width: none;
     padding-left: 0;
     padding-right: 0;
   }
@@ -64,6 +69,7 @@
   }
 
   #dionice [role='main'] > article {
+    max-width: none;
     li {
       @include span-columns($cols / 2, $cols);
       margin-bottom: gutter($cols);

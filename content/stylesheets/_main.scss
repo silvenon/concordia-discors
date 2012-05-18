@@ -4,13 +4,14 @@
 }
 
 #highlight {
+  position: relative;
+  z-index: 10;
+  max-width: 630px;
   h1 {
     $font-size: 44px;
     @include adjust-font-size-to($font-size);
     @include trailer(1, $font-size);
   }
-  position: relative;
-  z-index: 10;
   .gradient {
     padding: rhythm(.25);
     background: rgba(black, .15);

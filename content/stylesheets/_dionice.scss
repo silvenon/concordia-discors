@@ -2,7 +2,6 @@
   ol { @include unstyled-list; }
   li {
     @include trailer(.5);
-    max-width: 552px;
     padding: 0;
   }
   a {

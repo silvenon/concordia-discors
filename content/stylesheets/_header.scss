@@ -11,6 +11,7 @@
   @include pie-clearfix;
   padding-left: rhythm(.5, $font-size);
   padding-right: rhythm(.5, $font-size);
+  max-width: 428px;
   font: {
     family: $body;
     weight: normal;

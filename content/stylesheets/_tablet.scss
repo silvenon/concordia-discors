@@ -8,7 +8,22 @@
     background-image: url('/images/header_tablet.jpg');
   }
 
-  #logo { text-align: left; }
+  #logo {
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  #highlight {
+    @include rhythm(1, 0, 0, 1);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  [role='main'] > article {
+    max-width: rhythm(24);
+    margin-left: auto;
+    margin-right: auto;
+  }
 
   [role='main'] > .post {
     .img { width: rhythm(15); }
@@ -24,8 +39,8 @@
     }
   }
 
-  #multimedija [role='main'] > article {
-    li { max-width: rhythm(20); }
+  #dionice [role='main'] > article {
+    max-width: 552px;
   }
 
 }
