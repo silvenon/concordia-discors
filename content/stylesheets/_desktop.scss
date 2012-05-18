@@ -101,6 +101,9 @@
         @include text-shadow(rgba(black, .3) 1px 1px 2px);
         border-color: rgba(black, .4);
       }
+      @each $voice in sopran, alt, tenor, bas {
+        &.#{$voice} { background-image: url('/images/dionice/#{$voice}/link_desktop.jpg'); }
+      }
     }
   }
 

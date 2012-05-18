@@ -55,4 +55,12 @@
     }
   }
 
+  #dionice [role='main'] > article {
+    a {
+      @each $voice in sopran, alt, tenor, bas {
+        &.#{$voice} { background-image: url('/images/dionice/#{$voice}/link_tablet.jpg'); }
+      }
+    }
+  }
+
 }

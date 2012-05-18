@@ -19,7 +19,7 @@
     border-color: rgba(black, .2);
     &:hover { text-decoration: none; }
     @each $voice in sopran, alt, tenor, bas {
-      &.#{$voice} { background: url('/images/dionice/#{$voice}/link.jpg') center; }
+      &.#{$voice} { background: url('/images/dionice/#{$voice}/link.jpg') no-repeat center; }
     }
   }
 }
