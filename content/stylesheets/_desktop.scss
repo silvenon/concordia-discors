@@ -58,6 +58,25 @@
     }
   }
 
+  #dionice [role='main'] > article {
+    li {
+      @include span-columns($cols / 2, $cols);
+      margin-bottom: gutter($cols);
+      &:nth-child(2n+1) {
+        clear: left;
+      }
+      &:nth-child(2n) {
+        @include omega;
+        clear: right;
+      }
+    }
+    a {
+      $font-size: 48px;
+      @include rhythm-borders($lines: 5, $font-size: $font-size);
+      @include adjust-font-size-to($font-size);
+    }
+  }
+
   #arhiva, #article {
     .post {
       @include suffix(4, $main);
