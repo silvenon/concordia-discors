@@ -13,7 +13,6 @@
     display: block;
     background: white;
     border-color: rgba(black, .2);
-    &, &:hover { @include transition(all .2s); }
     &:hover {
       border-color: rgba(black, .4);
       text-decoration: none;

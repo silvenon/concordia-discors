@@ -47,6 +47,9 @@ h1 {
 a {
   @include hover-link;
   @include link-colors($link1, $link2, $link2, $link1, $link2);
+  &, &:hover {
+    @include transition(all .2s);
+  }
 }
 
 ul, ol {
