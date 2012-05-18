@@ -4,7 +4,7 @@ kind: article
 created_at: 2012/4/15
 ---
 
-![slika s emisije](/images/photos/news/dpz_5.jpg)
+![slika s emisije](/images/vijesti/dpz_5.jpg)
 
 U prvoj emisiji uživo Concordia discors je oduševila izvedbom "Zagorske" J.S.Slavenskog. Nakon napetog iščekivanja rezultata, prošli smo dalje bez pripetavanja.
 

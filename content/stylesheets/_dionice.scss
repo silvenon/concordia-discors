@@ -25,7 +25,7 @@
       border-color: rgba(black, .4);
     }
     @each $voice in sopran, alt, tenor, bas {
-      &.#{$voice} { background: url('/images/photos/dionice/#{$voice}/link.jpg') center; }
+      &.#{$voice} { background: url('/images/dionice/#{$voice}/link.jpg') center; }
     }
   }
 }
