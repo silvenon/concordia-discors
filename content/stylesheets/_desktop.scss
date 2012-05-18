@@ -51,8 +51,15 @@
       }
     }
     a {
+      $color1: rgba(black, .5);
+      $color2: nth($colors, 5);
+      @include link-colors($color1, $color2, $color2, $color1, $color2);
       @include opacity(.8);
-      &:hover { @include opacity(1); }
+      &:hover {
+        @include opacity(1);
+        border-color: rgba(black, .4);
+        text-decoration: none;
+      }
     }
   }
 
@@ -70,8 +77,18 @@
     }
     a {
       $font-size: 48px;
+      $color1: rgba(white, .75);
+      $color2: white;
       @include rhythm-borders($lines: 5, $font-size: $font-size);
       @include adjust-font-size-to($font-size);
+      @include link-colors($color1, $color2, $color2, $color1, $color2);
+      @include opacity(.5);
+      @include text-shadow(none);
+      &:hover {
+        @include opacity(1); 
+        @include text-shadow(rgba(black, .3) 1px 1px 2px);
+        border-color: rgba(black, .4);
+      }
     }
   }
 

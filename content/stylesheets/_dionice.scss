@@ -7,23 +7,17 @@
   }
   a {
     $font-size: 32px;
-    $color1: rgba(white, .75);
+    $color1: white;
     $color2: white;
     @include rhythm-borders($lines: 4, $font-size: $font-size);
     @include adjust-font-size-to($font-size);
     @include link-colors($color1, $color2, $color2, $color1, $color2);
-    @include opacity(.5);
-    @include text-shadow(none);
+    @include text-shadow(rgba(black, .3) 1px 1px 2px);
     display: block;
     font-family: $heading;
     text-align: center;
     border-color: rgba(black, .2);
-    &:hover {
-      @include opacity(1);
-      @include text-shadow(rgba(black, .3) 1px 1px 2px);
-      text-decoration: none;
-      border-color: rgba(black, .4);
-    }
+    &:hover { text-decoration: none; }
     @each $voice in sopran, alt, tenor, bas {
       &.#{$voice} { background: url('/images/dionice/#{$voice}/link.jpg') center; }
     }

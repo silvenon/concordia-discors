@@ -6,17 +6,10 @@
     padding: 0;
   }
   a {
-    $color1: rgba(black, .5);
-    $color2: nth($colors, 5);
-    @include link-colors($color1, $color2, $color2, $color1, $color2);
     @include rhythm-borders($lines: .5);
     display: block;
     background: white;
     border-color: rgba(black, .2);
-    &:hover {
-      border-color: rgba(black, .4);
-      text-decoration: none;
-    }
     &:before {
       content: url('/images/logo/facebook.png');
       display: block;
