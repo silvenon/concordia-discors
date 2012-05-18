@@ -6,7 +6,9 @@
     padding: 0;
   }
   a {
-    @include rhythm-borders($lines: .5);
+    @include leading-border($lines: 10.25);
+    @include trailing-border($lines: .25);
+    @include v-borders($lines: .5);
     @include text-shadow(none);
     @include box-shadow(rgba(black, .5) 0 0 7px);
     display: block;
@@ -18,6 +20,9 @@
       position: absolute;
       top: 6px;
       right: 6px;
+    }
+    @each $class in strike-a-pose, zbor-vladimir-prelog, susret-pjevackih-zborova, bozicni-koncert {
+      &.#{$class} { background: white url('/images/multimedija/#{$class}.jpg') no-repeat center top; }
     }
   }
   span {

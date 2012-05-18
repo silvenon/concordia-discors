@@ -46,6 +46,13 @@
     }
   }
 
+  #multimedija [role='main'] > article {
+    a {
+      @include leading-border($lines: 14.25);
+      @each $class in strike-a-pose, zbor-vladimir-prelog, susret-pjevackih-zborova, bozicni-koncert {
+        &.#{$class} { background-image: url('/images/multimedija/#{$class}_tablet.jpg'); }
+      }
+    }
   }
 
 }

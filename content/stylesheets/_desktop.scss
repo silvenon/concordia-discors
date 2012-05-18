@@ -59,11 +59,15 @@
     a {
       $color1: rgba(black, .5);
       $color2: nth($colors, 5);
+      @include leading-border($lines: 10.25);
       @include link-colors($color1, $color2, $color2, $color1, $color2);
       @include opacity(.8);
       &:hover {
         @include opacity(1);
         text-decoration: none;
+      }
+      @each $class in strike-a-pose, zbor-vladimir-prelog, susret-pjevackih-zborova, bozicni-koncert {
+        &.#{$class} { background-image: url('/images/multimedija/#{$class}_desktop.jpg'); }
       }
     }
   }
