@@ -26,6 +26,7 @@
   $cols: 7;
   #highlight {
     @include span-columns($cols, $main);
+    @include leader(0);
     h1 {
       $font-size: 54px;
       @include adjust-font-size-to($font-size);
