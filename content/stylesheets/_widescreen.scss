@@ -49,16 +49,9 @@
   }
 
   #footer {
-    $font-size: 62px;
-    $height: rhythm(4, $font-size);
+    $font-size: 54px;
     @include h-borders($font-size: $font-size);
-    @include adjust-font-size-to($font-size);
-    li {
-      @include trailer(0, $font-size);
-      margin: 0 10px;
-      height: $height;
-      line-height: $height;
-    }
+    li { margin: 0 10px; }
   }
 
   #multimedija [role='main'] > article {
