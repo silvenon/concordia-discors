@@ -13,6 +13,13 @@
     text-align: left;
   }
 
+  nav {
+    ol {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+  }
+
   #highlight {
     @include rhythm(1, 0, 0, 1);
     margin-left: auto;
