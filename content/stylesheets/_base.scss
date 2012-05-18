@@ -2,14 +2,19 @@ $total-columns: 4;
 $grid-padding: 0;
 $container-width: 100%;
 
-$tablet: 30em 8;
-$desktop: 60em 16;
-$widescreen: 90em 24;
+$tablet-layout: 30em 8;
+$desktop-layout: 60em 16;
+$widescreen-layout: 90em 24;
+
+$max-width: rhythm(19);
+$tablet-max-width: rhythm(26);
+$desktop-max-width: rhythm(29);
+$desktop-max-half-width: rhythm(14);
+$widescreen-max-width: rhythm(47);
+$widescreen-max-half-width: rhythm(23);
 
 $base-font-size: 16px;
 $base-line-height: 24px;
-
-$mobile-font-size: $base-font-size;
 
 $font_path: 'fontawesome-webfont';
 

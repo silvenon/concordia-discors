@@ -1,4 +1,4 @@
-@include at-breakpoint($widescreen) {
+@include at-breakpoint($widescreen-layout) {
 
   body {
     @include container;
@@ -57,6 +57,7 @@
   #multimedija [role='main'] > article {
     li {
       @include span-columns($cols / 2, $cols);
+      max-width: $widescreen-max-half-width;
       margin-bottom: 0 0 gutter($cols) 0;
     }
   }
@@ -64,6 +65,7 @@
   #dionice [role='main'] > article {
     li {
       @include span-columns($cols / 2, $cols);
+      max-width: $widescreen-max-half-width;
       margin-bottom: gutter($cols);
     }
     a {

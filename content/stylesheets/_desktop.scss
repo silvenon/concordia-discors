@@ -1,4 +1,4 @@
-@include at-breakpoint($desktop) {
+@include at-breakpoint($desktop-layout) {
 
   body {
     @include container;

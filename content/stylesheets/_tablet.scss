@@ -1,4 +1,4 @@
-@include at-breakpoint($tablet) {
+@include at-breakpoint($tablet-layout) {
 
   body {
     @include container;
@@ -20,7 +20,7 @@
   }
 
   [role='main'] > article {
-    max-width: rhythm(24);
+    max-width: $tablet-max-width;
     margin-left: auto;
     margin-right: auto;
   }
@@ -39,8 +39,6 @@
     }
   }
 
-  #dionice [role='main'] > article {
-    max-width: 552px;
   }
 
 }
