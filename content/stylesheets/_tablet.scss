@@ -1,48 +1,31 @@
 @include at-breakpoint($tablet-layout) {
 
-  body {
-    @include container;
-  }
+  body { @include container; }
 
-  #header {
-    background-image: url('/images/header_tablet.jpg');
-  }
+  #header { background-image: url('/images/header_tablet.jpg'); }
 
   #logo {
     margin: 0 auto;
     text-align: left;
   }
 
-  nav {
-    ol {
-      max-width: 720px;
-      margin: 0 auto;
-    }
+  nav ol {
+    max-width: 720px;
+    margin: 0 auto;
   }
 
-  #highlight {
-    @include rhythm(1, 0, 0, 1);
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  [role='main'] > article {
+  article {
     max-width: $tablet-max-width;
     margin-left: auto;
     margin-right: auto;
   }
 
-  #footer {
-    $font-size: 54px;
-    $height: rhythm(3, $font-size);
-    @include adjust-font-size-to($font-size);
-    li {
-      height: $height;
-      line-height: $height;
-    }
+  #highlight {
+    @include leader(1);
+    @include trailer(1);
   }
 
-  #multimedija [role='main'] > article {
+  #multimedija #highlight ~ article {
     a {
       @include leading-border($lines: 14.25);
       @each $class in strike-a-pose, zbor-vladimir-prelog, susret-pjevackih-zborova, bozicni-koncert {
@@ -51,7 +34,7 @@
     }
   }
 
-  #dionice [role='main'] > article {
+  #dionice #highlight ~ article {
     a {
       @each $voice in sopran, alt, tenor, bas {
         &.#{$voice} { background-image: url('/images/dionice/#{$voice}/link_tablet.jpg'); }

@@ -27,10 +27,8 @@
 
     %div{:role => 'main'}
       - if content_for(@item, :highlight)
-        %section#highlight
-          .gradient
-            .content
-              = content_for(@item, :highlight)
+        %article#highlight
+          .inner= content_for(@item, :highlight)
       = yield
 
     %footer#footer

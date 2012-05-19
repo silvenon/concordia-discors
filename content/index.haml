@@ -8,16 +8,15 @@ order: 0
 - highlight = sorted_articles[0]
 
 - content_for :highlight do
-  %article.post
-    %h1= link_to highlight[:title], highlight
-    - if highlight[:image]
-      %p
-        %img{:src => "/images/vijesti/#{highlight[:image]}.jpg"}
-    = highlight.compiled_content
-    %time= localize highlight[:created_at]
+  %h1= link_to highlight[:title], highlight
+  - if highlight[:image]
+    %p
+      %img{:src => "/images/vijesti/#{highlight[:image]}.jpg"}
+  = highlight.compiled_content
+  %time{:datetime => DateTime.parse(highlight[:created_at]).to_date.to_s, :pubdate => true}= localize highlight[:created_at]
 
 - sorted_articles[1..2].each do |article|
-  = render 'post', :item => article, :link => true, :small => true do
+  = render 'posts', :item => article do
     = article.compiled_content
 
 .go= link_to 'Arhiva vijesti &rarr;', @items.find { |item| item[:id] == 'arhiva' }

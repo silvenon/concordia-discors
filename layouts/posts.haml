@@ -1,12 +1,10 @@
 %article.post
   %header
     %time{:datetime => DateTime.parse(@item[:created_at]).to_date.to_s, :pubdate => true}= localize @item[:created_at]
-    %h1
-      - if @link
-        = link_to @item[:title], @item
-      - else
-        = @item[:title]
+    %h1= link_to(@item[:title], @item)
+
   - if @item[:image]
     %p
-      %img{:src => "/images/vijesti/#{@item[:image]}#{'_small' if @small}.jpg"}
+      %img{:src => "/images/vijesti/#{@item[:image]}_small.jpg"}
+
   = yield

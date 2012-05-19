@@ -3,53 +3,60 @@
   @include pie-clearfix;
 }
 
+article {
+  padding-left: rhythm(.5);
+  padding-right: rhythm(.5);
+  h1 {
+    $font-size: 28px;
+    @include adjust-font-size-to($font-size, 1.5);
+    @include trailer(.5, $font-size);
+  }
+  .img { @include trailer(.5); }
+  #highlight ~ &, #arhiva &, #article & {
+    @include text-shadow(white 0 1px 0);
+    clear: right;
+    table {
+      @include inner-table-borders(1px, darken(white, 20%));
+      border-collapse: collapse;
+      color: lighten($text, 20%);
+    }
+    td { padding: rhythm(.25) rhythm(.5); }
+  }
+}
+
 #highlight {
+  @include box-sizing(border-box);
   position: relative;
   z-index: 10;
-  max-width: 630px;
+  padding: rhythm(.25);
+  background: rgba(black, .15);
+  $color1: rgba(black, .05);
+  $color2: rgba(black, .1);
+  @include background(linear-gradient(
+    45deg,
+    $color1 25%,
+    $color2 25%,
+    $color2 50%,
+    $color1 50%,
+    $color1 75%,
+    $color2 75%
+  ));
+  @include background-size(4px 4px);
   h1 {
     $font-size: 44px;
     @include adjust-font-size-to($font-size);
-    @include trailer(1, $font-size);
-  }
-  .gradient {
-    padding: rhythm(.25);
-    background: rgba(black, .15);
-    $color1: rgba(black, .05);
-    $color2: rgba(black, .1);
-    @include background(linear-gradient(
-      45deg,
-      $color1 25%,
-      $color2 25%,
-      $color2 50%,
-      $color1 50%,
-      $color1 75%,
-      $color2 75%
-    ));
-    @include background-size(4px 4px);
-  }
-  .content {
-    @include box-shadow(rgba(black, .3) 0 0 8px);
-    padding: rhythm(.5);
-    background: white;
-  }
-  h1 {
+    @include trailer(.5, $font-size);
     @include text-shadow(
       white 1px 1px 0,
       rgba(black, .25) 2px 2px 1px
     );
-    color: nth($colors, 3);
     text-transform: none;
+    color: nth($colors, 3);
   }
-  time {
-    @include trailer(.5);
-    display: block;
-    text-align: right;
-  }
-  img {
-    @include trailer(.5);
-    @include box-shadow(inset rgba(black, .8) 0 0 2px 2px inset);
-    display: block;
+  .inner {
+    @include box-shadow(rgba(black, .3) 0 0 8px);
+    padding: rhythm(.5);
+    background: white;
   }
   table {
     @include trailer(.5);
@@ -60,26 +67,9 @@
   td:nth-child(2) { color: nth($colors, 3); }
   th { text-align: left; }
   thead tr:first-child { background: transparent; }
+  time { text-align: right; }
   :last-child { @include trailer(0); }
-  :last-child.img { font-size: 0; }
-}
-
-[role='main'] > article {
-  @include text-shadow(white 0 1px 0);
-  clear: right;
-  padding-left: rhythm(.5);
-  padding-right: rhythm(.5);
-  h1 {
-    $font-size: 28px;
-    @include adjust-font-size-to($font-size, 1.5);
-    @include trailer(.5, $font-size);
-  }
-  table {
-    @include inner-table-borders(1px, darken(white, 20%));
-    border-collapse: collapse;
-    color: lighten($text, 20%);
-  }
-  td { padding: rhythm(.25) rhythm(.5); }
+  .img:last-child { line-height: 0; }
 }
 
 .go {
@@ -90,7 +80,12 @@
     $color1: rgba(black, .4);
     $color2: nth($colors, 5);
     @include link-colors($color1, $color2, $color2, $color1, $color2);
+    outline: 1px solid rgba(black, .2);
     padding: 0 rhythm(.25);
     background: rgba(black, .05);
+    &:hover {
+      text-decoration: none;
+      outline-color: rgba(black, .4);
+    }
   }
 }

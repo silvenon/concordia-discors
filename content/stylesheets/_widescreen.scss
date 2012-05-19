@@ -5,18 +5,12 @@
     @include padding-trailer;
   }
 
-  #header {
-    background-image: url('/images/header_widescreen.jpg');
-  }
+  #header { background-image: url('/images/header_widescreen.jpg'); }
 
-  #logo {
-    @include trailer(1);
-  }
+  #logo { @include trailer(1); }
 
   $main: $total-columns - 2;
-  div[role='main'] {
-    @include pad(1, 1);
-  }
+  div[role='main'] { @include pad(1, 1); }
 
   $cols: 8;
   #highlight {
@@ -25,7 +19,7 @@
     h1 {
       $font-size: 62px;
       @include adjust-font-size-to($font-size);
-      @include trailer(1, $font-size);
+      @include trailer(.5, $font-size);
     }
   }
 
@@ -34,12 +28,9 @@
   $cols: $main - $cols;
   #highlight ~ article {
     @include span-columns($cols omega, $main);
-    max-width: none;
-    padding-left: 0;
-    padding-right: 0;
   }
 
-  [role='main'] > .post {
+  .post {
     h1{ float: left; }
     time {
       float: right;
@@ -48,17 +39,30 @@
   }
 
   #footer {
-    $font-size: 54px;
-    @include h-borders($font-size: $font-size);
-    li { margin: 0 10px; }
+    $font-size: 42px;
+    $height: rhythm(2.5, $font-size);
+    @include rhythm(0, 1, 1, 0, $font-size);
+    @include adjust-font-size-to($font-size, 1.5);
+    padding-left: rhythm(1, $font-size);
+    padding-right: rhythm(1, $font-size);
+    line-height: $height;
+    li {
+      height: $height;
+      margin: 0 10px;
+    }
   }
 
-  #multimedija [role='main'] > article {
-    li {
-      @include span-columns($cols / 2, $cols);
-      max-width: $widescreen-max-half-width;
-      margin-bottom: 0 0 gutter($cols) 0;
+  #multimedija, #dionice {
+    #highlight ~ article {
+      li {
+        @include span-columns($cols / 2, $cols);
+        max-width: $widescreen-max-half-width;
+        margin-bottom: gutter($cols);
+      }
     }
+  }
+
+  #multimedija #highlight ~ article {
     a {
       @include leading-border($lines: 12.25);
       @each $class in strike-a-pose, zbor-vladimir-prelog, susret-pjevackih-zborova, bozicni-koncert {
@@ -67,12 +71,7 @@
     }
   }
 
-  #dionice [role='main'] > article {
-    li {
-      @include span-columns($cols / 2, $cols);
-      max-width: $widescreen-max-half-width;
-      margin-bottom: gutter($cols);
-    }
+  #dionice #highlight ~ article {
     a {
       $font-size: 54px;
       @include h-borders($lines: 6.5, $font-size: $font-size);
@@ -85,10 +84,24 @@
   }
 
   #arhiva, #article {
-    .post {
-      @include suffix(0, $main);
-      @include post(9, $main);
+    article { max-width: none; }
+  }
+
+  $cols: $main / 2 - .5;
+  #arhiva article {
+    @include span-columns($cols, $main);
+    &:nth-of-type(2n+1) {
+      clear: left;
     }
+    &:nth-of-type(2n) {
+      @include omega;
+      clear: right;
+    }
+  }
+
+  $cols: $main / 2;
+  #article article {
+    @include span-columns($cols);
   }
 
 }

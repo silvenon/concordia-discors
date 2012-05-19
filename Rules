@@ -45,7 +45,7 @@ end
 
 compile '/vijesti/*/' do
   filter :maruku
-  layout 'post'
+  layout 'single'
   layout 'default'
   filter :relativize_paths, :type => :html
 end
@@ -54,7 +54,6 @@ compile '*' do
   if item.binary?
     # don’t filter binary items
   else
-    # filter :relativize_paths, :type => :html
     case item[:extension]
       when 'md'
         filter :maruku

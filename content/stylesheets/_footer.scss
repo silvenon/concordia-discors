@@ -1,20 +1,19 @@
 #footer {
-  $font-size: 42px;
+  $font-size: 38px;
   $height: rhythm(2, $font-size);
-  @include leading-border;
+  @include padding-leader(1, $font-size);
   @include adjust-font-size-to($font-size, 1.5);
   @include pie-clearfix;
   clear: both;
-  padding-left: rhythm(.25);
-  padding-right: rhythm(.25);
+  padding-left: rhythm(.5, $font-size);
+  padding-right: rhythm(.5, $font-size);
   font-family: $heading;
   line-height: $height;
   background: white;
-  border-color: rgba(black, .2);
+  outline: 1px solid rgba(black, .25);
   img { max-height: 100%; }
   ol {
     @include horizontal-list(10px);
-    padding: 0 rhythm(.25, $font-size);
   }
   li {
     @include trailer(1, $font-size);
@@ -35,5 +34,4 @@
     background: white;
     border: 1px solid rgba(black, .2);
   }
-
 }

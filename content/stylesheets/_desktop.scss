@@ -1,17 +1,13 @@
 @include at-breakpoint($desktop-layout) {
 
-  body {
-    @include container;
-  }
+  body { @include container; }
 
   #header {
     @include trailer(.5);
     background-image: url('/images/header_desktop.jpg');
   }
 
-  #logo {
-    margin:0;
-  }
+  #logo { margin: 0; }
 
   nav {
     ol { max-width: none; }
@@ -23,6 +19,14 @@
     @include pad(.5, .5);
   }
 
+  article {
+    max-width: none;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
   $cols: 7;
   #highlight {
     @include span-columns($cols, $main);
@@ -30,14 +34,8 @@
     h1 {
       $font-size: 54px;
       @include adjust-font-size-to($font-size);
-      @include trailer(1, $font-size);
+      @include trailer(.5, $font-size);
     }
-  }
-  #highlight ~ article {
-    @include box-sizing(border-box);
-    max-width: none;
-    padding-left: 0;
-    padding-right: 0;
   }
 
   $cols: $main - $cols;
@@ -45,18 +43,23 @@
     @include span-columns($cols omega, $main);
   }
 
-  #multimedija [role='main'] > article {
-    li {
-      @include span-columns($cols / 2, $cols);
-      margin-bottom: gutter($cols);
-      &:nth-child(2n+1) {
-        clear: left;
-      }
-      &:nth-child(2n) {
-        @include omega;
-        clear: right;
+  #multimedija, #dionice {
+    #highlight ~ article {
+      li {
+        @include span-columns($cols / 2, $cols);
+        margin-bottom: gutter($cols);
+        &:nth-child(2n+1) {
+          clear: left;
+        }
+        &:nth-child(2n) {
+          @include omega;
+          clear: right;
+        }
       }
     }
+  }
+
+  #multimedija #highlight ~ article {
     a {
       $color1: rgba(black, .5);
       $color2: nth($colors, 5);
@@ -73,19 +76,7 @@
     }
   }
 
-  #dionice [role='main'] > article {
-    max-width: none;
-    li {
-      @include span-columns($cols / 2, $cols);
-      margin-bottom: gutter($cols);
-      &:nth-child(2n+1) {
-        clear: left;
-      }
-      &:nth-child(2n) {
-        @include omega;
-        clear: right;
-      }
-    }
+  #dionice #highlight ~ article {
     a {
       $font-size: 48px;
       $color1: rgba(white, .75);
@@ -108,17 +99,7 @@
   }
 
   #arhiva, #article {
-    .post {
-      @include suffix(4, $main);
-    }
-  }
-
-  #article {
-    .img {
-      float: none;
-      width: auto;
-      margin-left: 0;
-    }
+    article { max-width: $tablet-max-width; }
   }
 
 }

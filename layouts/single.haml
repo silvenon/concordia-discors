@@ -1,0 +1,10 @@
+%article.post
+  %header
+    %time{:datetime => DateTime.parse(@item[:created_at]).to_date.to_s, :pubdate => true}= localize @item[:created_at]
+    %h1= @item[:title]
+
+  - if @item[:image]
+    %p
+      %img{:src => "/images/vijesti/#{@item[:image]}.jpg"}
+
+  = yield

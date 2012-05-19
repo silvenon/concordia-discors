@@ -1,4 +1,4 @@
-#multimedija [role='main'] > article {
+#multimedija #highlight ~ article {
   ul { @include unstyled-list; }
   li {
     @include trailer(.5);
