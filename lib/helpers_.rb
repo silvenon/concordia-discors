@@ -5,3 +5,4 @@ include Nanoc::Helpers::Rendering
 
 include Navigation
 include CroatianDate
+include TagHelper

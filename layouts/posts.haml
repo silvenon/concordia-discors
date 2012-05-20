@@ -4,7 +4,6 @@
     %h1= link_to(@item[:title], @item)
 
   - if @item[:image]
-    %p
-      %img{:src => "/images/vijesti/#{@item[:image]}_small.jpg"}
+    %p= link_to image_tag("vijesti/#{@item[:image]}_small.jpg"), "/images/vijesti/#{@item[:image]}.jpg"
 
   = yield
