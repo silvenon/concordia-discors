@@ -73,9 +73,8 @@ article {
 }
 
 .go {
-  @include trailer;
-  clear: right;
-  text-align: right;
+  @include rhythm(.5, 0, 0, .5);
+  text-align: left;
   a {
     $color1: rgba(black, .4);
     $color2: nth($colors, 5);

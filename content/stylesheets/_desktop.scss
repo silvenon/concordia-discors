@@ -43,6 +43,15 @@
     @include span-columns($cols omega, $main);
   }
 
+  .go {
+    max-width: none;
+    position: relative;
+    left: - columns(2, $main);
+    clear: right;
+    margin-left: 0;
+    a { padding-left: columns(2, $cols); }
+  }
+
   #multimedija, #dionice {
     #highlight ~ article {
       li {
@@ -98,8 +107,16 @@
     }
   }
 
+  $cols: $main / 2;
   #arhiva, #article {
-    article { max-width: $tablet-max-width; }
+    article {
+      @include span-columns($cols, $main);
+      clear: left;
+    }
+    .go {
+      @include reset-columns;
+      a { padding-left: columns(2, $main); }
+    }
   }
 
 }

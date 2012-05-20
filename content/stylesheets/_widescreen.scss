@@ -26,8 +26,13 @@
   nav { @include prefix($cols + .75); }
 
   $cols: $main - $cols;
-  #highlight ~ article {
+  #highlight ~ article, .go {
     @include span-columns($cols omega, $main);
+  }
+
+  .go {
+    left: - columns(2, $main);
+    a { padding-left: columns(2, $cols); }
   }
 
   .post {
@@ -43,8 +48,6 @@
     $height: rhythm(2.5, $font-size);
     @include rhythm(0, 1, 1, 0, $font-size);
     @include adjust-font-size-to($font-size, 1.5);
-    padding-left: rhythm(1, $font-size);
-    padding-right: rhythm(1, $font-size);
     line-height: $height;
     li {
       height: $height;
@@ -87,21 +90,31 @@
     article { max-width: none; }
   }
 
-  $cols: $main / 2 - .5;
-  #arhiva article {
-    @include span-columns($cols, $main);
-    &:nth-of-type(2n+1) {
-      clear: left;
+  #arhiva, #article {
+    .go {
+      @include reset-columns;
+      @include leader(0);
+      a { padding-left: columns(2, $main); }
     }
-    &:nth-of-type(2n) {
-      @include omega;
-      clear: right;
+  }
+
+  $cols: $main / 2 - .5;
+  #arhiva {
+    article {
+      @include span-columns($cols, $main);
+      &:nth-of-type(2n+1) {
+        clear: left;
+      }
+      &:nth-of-type(2n) {
+        @include omega;
+        clear: right;
+      }
     }
   }
 
   $cols: $main / 2;
-  #article article {
-    @include span-columns($cols);
+  #article {
+    article { @include span-columns($cols, $main); }
   }
 
 }

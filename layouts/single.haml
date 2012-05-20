@@ -1,3 +1,5 @@
+.go= link_to '&larr; Arhiva vijesti', @items.find { |item| item[:id] == 'arhiva' }
+
 %article.post
   %header
     %time{:datetime => DateTime.parse(@item[:created_at]).to_date.to_s, :pubdate => true}= localize @item[:created_at]
