@@ -5,12 +5,12 @@
     @include padding-trailer;
   }
 
+  $main: $total-columns - 2;
+  #logo, div[role='main'], #footer { @include pad(1, 1); }
+
   #header { background-image: url('/images/header_widescreen.jpg'); }
 
   #logo { @include trailer(1); }
-
-  $main: $total-columns - 2;
-  div[role='main'] { @include pad(1, 1); }
 
   $cols: 8;
   #highlight {

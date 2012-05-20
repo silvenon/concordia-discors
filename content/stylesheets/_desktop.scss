@@ -7,16 +7,15 @@
     background-image: url('/images/header_desktop.jpg');
   }
 
+  $main: $total-columns - 1;
+  #logo, [role='main'], #footer { @include pad(.5, .5); }
+
   #logo { margin: 0; }
 
   nav {
+    @include prefix(.25);
     ol { max-width: none; }
     a, .active { padding: rhythm(.5); }
-  }
-
-  $main: $total-columns - 1;
-  [role='main'] {
-    @include pad(.5, .5);
   }
 
   article {
