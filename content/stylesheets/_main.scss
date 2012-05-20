@@ -12,6 +12,7 @@ article {
     @include trailer(.5, $font-size);
   }
   .img { @include trailer(.5); }
+  td { padding: rhythm(.25) rhythm(.5); }
   #highlight ~ &, #arhiva &, #article & {
     @include text-shadow(white 0 1px 0);
     clear: right;
@@ -20,7 +21,6 @@ article {
       border-collapse: collapse;
       color: lighten($text, 20%);
     }
-    td { padding: rhythm(.25) rhythm(.5); }
   }
 }
 
