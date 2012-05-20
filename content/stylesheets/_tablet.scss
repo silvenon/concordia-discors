@@ -20,6 +20,11 @@
     margin-right: auto;
   }
 
+  #footer ol {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
   #highlight {
     @include leader(1);
     @include trailer(1);

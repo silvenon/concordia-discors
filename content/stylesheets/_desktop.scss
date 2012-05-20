@@ -51,6 +51,22 @@
     a { padding-left: columns(2, $cols); }
   }
 
+  #footer {
+    $font-size: 42px;
+    $height: rhythm(2.5, $font-size);
+    @include rhythm(0, 1, 1, 0, $font-size);
+    @include adjust-font-size-to($font-size, 1.5);
+    line-height: $height;
+    ol {
+      max-width: none;
+      margin: 0;
+    }
+    li {
+      height: $height;
+      margin: 0 10px;
+    }
+  }
+
   #multimedija, #dionice {
     #highlight ~ article {
       li {
