@@ -3,8 +3,7 @@ title: Arhiva
 id: arhiva
 ---
 
-
-.go= link_to '&larr; Početna', @items.find { |item| item[:id] == 'index' }
+.go= link_to 'Početna', @items.find { |item| item[:id] == 'index' }, :class => 'icon-arrow-left'
 
 - sorted_articles.each do |article|
   = render 'posts', :item => article do

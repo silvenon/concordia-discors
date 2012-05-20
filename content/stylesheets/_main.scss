@@ -86,5 +86,6 @@ article {
       text-decoration: none;
       outline-color: rgba(black, .4);
     }
+    &:before { padding-right: 5px; }
   }
 }

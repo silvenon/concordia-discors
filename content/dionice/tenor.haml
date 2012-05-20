@@ -15,7 +15,7 @@ id: tenor
 
       ![slika Mateja i Branimira](/images/dionice/tenor/voditelji.jpg)
 
-.go= link_to '&larr; Dionice', @items.find { |item| item[:id] == 'dionice' }
+.go= link_to 'Dionice', @items.find { |item| item[:id] == 'dionice' }, :class => 'icon-arrow-left'
 
 %article
   :markdown

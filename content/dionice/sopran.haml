@@ -15,7 +15,7 @@ id: sopran
 
       ![slika Petra i Katarina](/images/dionice/sopran/voditelji.jpg)
 
-.go= link_to '&larr; Dionice', @items.find { |item| item[:id] == 'dionice' }
+.go= link_to 'Dionice', @items.find { |item| item[:id] == 'dionice' }, :class => 'icon-arrow-left'
 
 %article
   :markdown
