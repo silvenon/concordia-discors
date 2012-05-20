@@ -7,7 +7,7 @@ order: 0
 
 - highlight = sorted_articles[0]
 
-.go= link_to '&larr; Arhiva vijesti', @items.find { |item| item[:id] == 'arhiva' }
+.go= link_to ' Arhiva vijesti', @items.find { |item| item[:id] == 'arhiva' }, :class => 'icon-book'
 
 - content_for :highlight do
   %h1= link_to highlight[:title], highlight
