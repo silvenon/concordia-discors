@@ -12,6 +12,7 @@ article h1 a {
     @include padding-trailer(0);
     border: 0;
   }
+  img { max-width: none; }
   &, header { @include clearfix; }
 }
 
