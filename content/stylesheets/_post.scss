@@ -20,6 +20,9 @@ time {
   color: lighten($text, 30%);
 }
 
+#index .go a:before { content: '\21E6 '; }
+
+.back a:before { content: '\2190 '; }
 
 #arhiva, #article {
   #header { @include trailer; }
