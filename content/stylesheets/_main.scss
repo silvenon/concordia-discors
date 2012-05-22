@@ -79,7 +79,7 @@ article {
     $color1: rgba(black, .4);
     $color2: nth($colors, 5);
     @include link-colors($color1, $color2, $color2, $color1, $color2);
-    outline: 1px solid rgba(black, .2);
+    border: 1px solid rgba(black, .2);
     padding: 0 rhythm(.25);
     background: rgba(black, .05);
     &:hover {
