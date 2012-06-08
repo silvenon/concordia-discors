@@ -1,4 +1,4 @@
-.go= link_to 'Arhiva vijesti', @items.find { |item| item[:id] == 'arhiva' }, :class => 'icon-arrow-left'
+.go.back= link_to 'Arhiva vijesti', @items.find { |item| item[:id] == 'arhiva' }
 
 %article.post
   %header
