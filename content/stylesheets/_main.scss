@@ -4,8 +4,8 @@
 }
 
 article {
-  padding-left: rhythm(.5);
-  padding-right: rhythm(.5);
+  margin-left: rhythm(.5);
+  margin-right: rhythm(.5);
   h1 {
     $font-size: 28px;
     @include adjust-font-size-to($font-size, 1.5);
