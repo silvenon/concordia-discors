@@ -39,7 +39,7 @@
     h1{ float: left; }
     time {
       float: right;
-      @include leader(.5);
+      @include adjust-leading-to(1.75);
     }
   }
 
