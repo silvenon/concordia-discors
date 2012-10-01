@@ -1,25 +1,31 @@
-#dionice [role='main'] > article {
-  ol { @include unstyled-list; }
-  li {
-    @include trailer(.5);
-    padding: 0;
-  }
-  a {
-    $font-size: 32px;
-    $color1: white;
-    $color2: white;
-    @include h-borders($lines: 4, $font-size: $font-size);
-    @include v-borders($lines: 1, $font-size: $font-size);
-    @include adjust-font-size-to($font-size);
-    @include link-colors($color1, $color2, $color2, $color1, $color2);
-    @include text-shadow(rgba(black, .3) 1px 1px 2px);
-    display: block;
-    font-family: $heading;
-    text-align: center;
-    border-color: rgba(black, .2);
-    &:hover { text-decoration: none; }
-    @each $voice in sopran, alt, tenor, bas {
-      &.#{$voice} { background: url('/images/dionice/#{$voice}/link.jpg') no-repeat center; }
+body.dionice {
+
+  article {
+
+    ol { @extend %unstyled-list; }
+
+    li {
+      @include trailer(.5);
+      padding: 0;
+    }
+
+    a {
+      @include with-font-size(32px) {
+        @include h-borders(1px, 3.5);
+        @include v-borders;
+        @include color-link(white, white);
+        @include text-shadow(rgba(black, .3) 1px 1px 2px);
+        display: block;
+        font-family: $heading;
+        text-align: center;
+        border-color: rgba(black, .2);
+        &:hover { text-decoration: none; }
+
+        @each $voice in sopran, alt, tenor, bas {
+          &.#{$voice} { background: image-url('dionice/#{$voice}/link.jpg') no-repeat center; }
+        }
+      }
     }
   }
+
 }

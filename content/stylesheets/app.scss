@@ -1,9 +1,12 @@
 @import 'compass';
-@import 'base';
+@import 'compass/css3/user-interface';
 @import 'susy';
 
-@import 'layout';
+@import 'base';
+
+@import 'general';
 @import 'header';
+@import 'navigation';
 @import 'main';
 @import 'post';
 @import 'footer';

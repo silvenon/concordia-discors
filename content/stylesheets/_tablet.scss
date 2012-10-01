@@ -1,48 +1,44 @@
 @include at-breakpoint($tablet-layout) {
 
-  body { @include container; }
-
-  #header { background-image: url('/images/header_tablet.jpg'); }
-
-  #logo {
-    margin: 0 auto;
+  #header {
+    height: 320px;
     text-align: left;
+    background-image: image-url('header_tablet.jpg');
   }
 
-  nav ol {
-    max-width: 720px;
-    margin: 0 auto;
-  }
+  nav { @include trailer; }
 
-  article, .go {
+  #header hgroup, #highlight, article, .go, #footer ol {
     max-width: $tablet-max-width;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  #footer ol {
-    max-width: 640px;
-    margin: 0 auto;
-  }
-
-  #highlight {
-    @include leader(1);
-    @include trailer(1);
-  }
-
-  #multimedija #highlight ~ article {
-    a {
-      @include leading-border($lines: 14.25);
-      @each $class in strike-a-pose, zbor-vladimir-prelog, susret-pjevackih-zborova, bozicni-koncert {
-        &.#{$class} { background-image: url('/images/multimedija/#{$class}_tablet.jpg'); }
-      }
+    margin: {
+      left: auto;
+      right: auto;
     }
   }
 
-  #dionice #highlight ~ article {
-    a {
-      @each $voice in sopran, alt, tenor, bas {
-        &.#{$voice} { background-image: url('/images/dionice/#{$voice}/link_tablet.jpg'); }
+  #highlight { @include trailer; }
+
+  .go a {
+    margin-left: 0;
+    padding-left: rhythm(.25);
+    border-left-width: 1px;
+  }
+
+  body {
+    &.multimedija article {
+      a {
+        @include leading-border($lines: 13.25);
+        @each $class in strike-a-pose, zbor-vladimir-prelog, susret-pjevackih-zborova, bozicni-koncert {
+          &.#{$class} { background-image: image-url('multimedija/#{$class}_tablet.jpg'); }
+        }
+      }
+    }
+
+    &.dionice article {
+      a {
+        @each $voice in sopran, alt, tenor, bas {
+          &.#{$voice} { background-image: image-url('dionice/#{$voice}/link_tablet.jpg'); }
+        }
       }
     }
   }

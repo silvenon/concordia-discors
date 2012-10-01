@@ -1,14 +1,14 @@
 !!!
-%html{:lang => 'hr'}
+%html{lang: 'hr'}
   %head
-    %title Concordia discors &middot; #{@item[:title]}
-    %meta{:charset => 'utf-8'}
-    %meta{:name => 'viewport', :content => 'width=device-width; initial-scale=1.0; maximum-scale=1.0'}
-    %meta{:content => 'nanoc 3.3.6', :name => 'generator'}
-    %link{:href => '/feed.xml', :rel => 'alternate', :type => 'application/atom+xml', :title => 'Atom Feed for Concordia discors'}
-    %link{:href => 'http://fonts.googleapis.com/css?family=PT+Sans+Narrow:700&subset=latin,latin-ext', :rel => 'stylesheet', :type => 'text/css'}
-    %link{:href => '/stylesheets/app.css', :rel => 'stylesheet', :type => 'text/css'}
-    %link{:href => '/favicon.ico', :rel => 'shortcut icon'}
+    %title Concordia discors · #{@item[:title]}
+    %meta{charset: 'utf-8'}
+    %meta{name: 'viewport', content: 'width=device-width; initial-scale=1; maximum-scale=1'}
+    %meta{name: 'generator', content: 'nanoc 3.4.1'}
+    %link{href: '/feed.xml', rel: 'alternate', type: 'application/atom+xml', title: 'Atom Feed for Concordia discors'}
+    %link{href: '/stylesheets/app.css', rel: 'stylesheet', type: 'text/css'}
+    %link{href: '/favicon.ico', rel: 'shortcut icon'}
+
     :javascript
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-27673361-1']);
@@ -19,49 +19,33 @@
         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
-    %script{:src => '/javascripts/zepto.min.js'}
-    %script{:src => '/javascripts/zepto.fittext.js'}
-    %script{:src => '/javascripts/helpers.js'}
-    %script{:src => '/javascripts/responsive.js'}
-  %body{:id => @item[:id] || @item[:kind]}
-    %header#header
-      %h1#logo
-        %a{:href => '/'}
-          %img{:src => '/images/logo.png'}
-          %span Akademski zbor Filozofskoga fakulteta u Zagrebu
-      %nav
-        %ol
-          = list_of navigation_pages do |page|
-            = link_to_unless_current page[:name], page
 
-    %div{:role => 'main'}
+    %script{src: '/javascripts/zepto.min.js'}
+    %script{src: '/javascripts/zepto.fittext.js'}
+    %script{src: '/javascripts/helpers.js'}
+    %script{src: '/javascripts/responsive.js'}
+
+  %body{class: @item[:id] || @item[:kind]}
+    %header#header
+      %hgroup
+        %h1#logo= link_to image_tag('logo.png'), '/'
+        %h2#tagline Akademski zbor Filozofskoga fakulteta u Zagrebu
+
+    %nav
+      %ol
+        = list_of navigation_pages do |page|
+          = link_to_unless_current page[:name], page
+
+    #main{role: 'main'}
       - if content_for(@item, :highlight)
-        %article#highlight
-          .inner= content_for(@item, :highlight)
+        #highlight
+          = content_for(@item, :highlight)
+
       = yield
 
     %footer#footer
       %ol
-        %li
-          %a{:href => 'http://www.ffzg.unizg.hr/', :title => 'Filozofski fakultet u Zagrebu', :target => '_blank'}
-            %img{:src => '/images/logo/ffzg.png'}
-        %li
-          %a{:href => 'http://www.unizg.hr/', :title => 'Sveučilište u Zagrebu', :target => '_blank'}
-            %img{:src => '/images/logo/unizg.jpg'}
-        %li
-          %a{:href => 'http://ksff.ffzg.hr/', :title => 'Klub Studenata Filozofskog Fakulteta', :target => '_blank'} KSFF
-        %li
-          %a{:href => 'http://www.huz.com.hr/', :title => 'Hrvatska udruga zborovođa', :target => '_blank'}
-            %img{:src => '/images/logo/huz.jpg'}
-        %li
-          %a{:href => 'http://www.hrt.hr/index.php?id=137&tx_ttnews%5Bcat%5D=477', :title => 'HRT: Do posljednjeg zbora', :target => '_blank'}
-            %img{:src => '/images/logo/dpz.jpg'}
-            %img.at.hrt{:src => '/images/logo/hrt.png'}
-        %li
-          %a{:href => 'https://www.facebook.com/do.posljednjeg.zbora', :title => 'Facebook: Do posljednjeg zbora', :target => '_blank'}
-            %img{:src => '/images/logo/dpz.jpg'}
-            %img.at.fb{:src => '/images/logo/facebook.png'}
-        %li
-          %a{:href => 'http://www.youtube.com/user/DoPosljednjegZbora', :title => 'YouTube: Do posljednjeg zbora', :target => '_blank'}
-            %img{:src => '/images/logo/dpz.jpg'}
-            %img.at.youtube{:src => '/images/logo/youtube.png'}
+        %li= link_to image_tag('logo/ffzg.png'), 'http://www.ffzg.unizg.hr/', title: 'Filozofski fakultet u Zagrebu', target: '_blank'
+        %li= link_to image_tag('logo/unizg.jpg'), 'http://www.unizg.hr/', title: 'Sveučilište u Zagrebu', target: '_blank'
+        %li= link_to 'KSFF', 'http://ksff.ffzg.hr/', title: 'Klub Studenata Filozofskog Fakulteta', target: '_blank'
+        %li= link_to image_tag('logo/huz.jpg'), 'http://www.huz.com.hr/', title: 'Hrvatska udruga zborovođa', target: '_blank'

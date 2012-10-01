@@ -1,136 +1,119 @@
 @include at-breakpoint($desktop-layout) {
 
-  body { @include container; }
+  #header { background-image: image-url('header_desktop.jpg'); }
 
-  #header {
-    @include trailer(.5);
-    background-image: url('/images/header_desktop.jpg');
-  }
-
-  $main: $total-columns - 1;
-  #logo, [role='main'], #footer { @include pad(.5, .5); }
-
-  #logo { margin: 0; }
-
-  nav {
-    @include prefix(.25);
-    ol { max-width: none; }
-    a, .active { padding: rhythm(.5); }
-  }
-
-  article {
+  #header hgroup, #highlight, article, .go, #footer ol {
     max-width: none;
-    padding-left: 0;
-    padding-right: 0;
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  $cols: 7;
-  #highlight {
-    @include span-columns($cols, $main);
-    @include leader(0);
-    h1 {
-      $font-size: 54px;
-      @include adjust-font-size-to($font-size);
-      @include trailer(.5, $font-size);
+    margin: {
+      left: 0;
+      right: 0;
     }
   }
 
-  $cols: $main - $cols;
-  #highlight ~ article, .go {
-    @include span-columns($cols omega, $main);
+  $cols: 8;
+  #highlight {
+    @include span-columns($cols);
+
+    h1 {
+      @include with-font-size(50px, 2.5) {
+        @include trailer(.5);
+      }
+    }
+  }
+
+  $cols: $total-columns - $cols;
+  article, .go {
+    @include span-columns($cols omega);
   }
 
   .go {
-    max-width: none;
-    position: relative;
-    left: - columns(2, $main);
     clear: right;
-    margin-left: 0;
-    a { padding-left: columns(2, $cols); }
+
+    a {
+      margin-left: - gutter($cols);
+      padding-left: gutter($cols);
+      border-left: none;
+    }
+  }
+
+  body {
+
+    &.multimedija, &.dionice {
+      article {
+        li {
+          @include span-columns($cols / 2, $cols);
+          @include nth-omega(2n);
+          @include trailer(.5);
+          margin-bottom: gutter($cols);
+          &:nth-child(2n+1) { clear: left; }
+          &:nth-child(2n) { clear: right; }
+        }
+      }
+    }
+
+    &.multimedija article {
+      a {
+        @include leading-border(1px, 9.5);
+        @include color-link(rgba(black, .5), nth($colors, 5));
+        @include opacity(.8);
+        &:hover { @include opacity(1); }
+        @each $class in strike-a-pose, zbor-vladimir-prelog, susret-pjevackih-zborova, bozicni-koncert {
+          &.#{$class} { background-image: image-url('multimedija/#{$class}_desktop.jpg'); }
+        }
+      }
+    }
+
+    &.dionice article {
+      a {
+        @include with-font-size(48px) {
+          @include h-borders(1px, 5);
+          @include v-borders;
+          @include color-link(rgba(white, .75), white);
+          @include opacity(.5);
+          @include text-shadow(none);
+          &:hover {
+            @include opacity(1);
+            @include text-shadow(rgba(black, .5) 1px 1px 2px);
+            border-color: rgba(black, .4);
+          }
+          @each $voice in sopran, alt, tenor, bas {
+            &.#{$voice} { background-image: image-url('dionice/#{$voice}/link_desktop.jpg'); }
+          }
+        }
+      }
+    }
+
+    $cols: $total-columns - 4;
+    &.arhiva, &.article {
+      article {
+        @include reset-columns;
+        max-width: columns($cols);
+        margin: {
+          left: 0;
+          right: 0;
+        }
+      }
+
+      .go {
+        @include reset-columns;
+        a {
+          margin-left: - $grid-padding;
+          padding-left: $grid-padding;
+        }
+      }
+    }
   }
 
   #footer {
-    $font-size: 42px;
-    $height: rhythm(2.5, $font-size);
-    @include rhythm(0, 1, 1, 0, $font-size);
-    @include adjust-font-size-to($font-size, 1.5);
-    line-height: $height;
-    ol {
-      max-width: none;
-      margin: 0;
-    }
+    @include rhythm(0, 1, 1, 0);
+
     li {
-      height: $height;
-      margin: 0 10px;
-    }
-  }
-
-  #multimedija, #dionice {
-    #highlight ~ article {
-      li {
-        @include span-columns($cols / 2, $cols);
-        margin-bottom: gutter($cols);
-        &:nth-child(2n+1) {
-          clear: left;
-        }
-        &:nth-child(2n) {
-          @include omega;
-          clear: right;
-        }
+      @include with-font-size(48px) {
+        $height: rhythm(2.5);
+        height: $height;
+        line-height: $height;
+        margin: 0 10px;
       }
-    }
-  }
-
-  #multimedija #highlight ~ article {
-    a {
-      $color1: rgba(black, .5);
-      $color2: nth($colors, 5);
-      @include leading-border($lines: 10.25);
-      @include link-colors($color1, $color2, $color2, $color1, $color2);
-      @include opacity(.8);
-      &:hover {
-        @include opacity(1);
-        text-decoration: none;
-      }
-      @each $class in strike-a-pose, zbor-vladimir-prelog, susret-pjevackih-zborova, bozicni-koncert {
-        &.#{$class} { background-image: url('/images/multimedija/#{$class}_desktop.jpg'); }
-      }
-    }
-  }
-
-  #dionice #highlight ~ article {
-    a {
-      $font-size: 48px;
-      $color1: rgba(white, .75);
-      $color2: white;
-      @include h-borders($lines: 5, $font-size: $font-size);
-      @include v-borders($lines: 1, $font-size: $font-size);
-      @include adjust-font-size-to($font-size);
-      @include link-colors($color1, $color2, $color2, $color1, $color2);
-      @include opacity(.5);
-      @include text-shadow(none);
-      &:hover {
-        @include opacity(1); 
-        @include text-shadow(rgba(black, .3) 1px 1px 2px);
-        border-color: rgba(black, .4);
-      }
-      @each $voice in sopran, alt, tenor, bas {
-        &.#{$voice} { background-image: url('/images/dionice/#{$voice}/link_desktop.jpg'); }
-      }
-    }
-  }
-
-  $cols: $main / 2;
-  #arhiva, #article {
-    article {
-      @include span-columns($cols, $main);
-      clear: left;
-    }
-    .go {
-      @include reset-columns;
-      a { padding-left: columns(2, $main); }
     }
   }
 

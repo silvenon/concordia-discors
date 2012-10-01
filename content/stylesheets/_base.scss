@@ -1,10 +1,13 @@
+// grid
+
 $total-columns: 4;
-$grid-padding: 0;
-$container-width: 100%;
+$container-style: fluid;
 
 $tablet-layout: 30em 8;
 $desktop-layout: 60em 16;
 $widescreen-layout: 90em 24;
+
+// max-width
 
 $max-width: rhythm(19);
 $tablet-max-width: rhythm(26);
@@ -13,27 +16,61 @@ $desktop-max-half-width: rhythm(14);
 $widescreen-max-width: rhythm(47);
 $widescreen-max-half-width: rhythm(23);
 
+// type
+
 $base-font-size: 16px;
 $base-line-height: 26px;
 
 $body: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$heading: 'PT Sans Narrow', 'Arial Narrow', $body;
+$heading: 'Arial Narrow', $body;
+
+// colors
 
 $colors: #D6C274 #D89E46 #004c54 #3D2423 #AB362E;
 
 $text: lighten(black, 30%);
 
-$link1: nth($colors, 5);
-$link2: darken($link1, 20%);
+// placeholders
 
-@mixin unstyled-list {
+%inline-block { @include inline-block; }
+
+%pie-clearfix { @include pie-clearfix; }
+
+%unstyled-list {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+%full-width {
+  padding: {
+    left: $grid-padding;
+    right: $grid-padding;
+  }
+  margin: {
+    left: - $grid-padding;
+    right: - $grid-padding;
+  }
+}
+
+// mixins
+
+@mixin color-link($color1, $color2) {
+  @include link-colors($color1, $color2, $color2, $color1, $color2);
 }
 
 @mixin v-borders($width: 1px, $lines: 1, $font-size: $base-font-size, $border-style: $default-rhythm-border-style) {
   @each $side in left, right {
     @include apply-side-rhythm-border($side, $width, $lines, $font-size, $border-style);
   }
+}
+
+@mixin with-font-size($to-size, $lines: lines-for-font-size($to-size), $from-size: $base-font-size) {
+  @include adjust-font-size-to($to-size, $lines, $from-size);
+  $tmp: $base-font-size;
+  $base-font-size: $to-size;
+
+  @content;
+
+  $base-font-size: $tmp;
 }

@@ -1,91 +1,89 @@
-[role='main'] {
+#main {
+  @extend %pie-clearfix;
   @include trailer(.5);
-  @include pie-clearfix;
 }
 
 article {
-  margin-left: rhythm(.5);
-  margin-right: rhythm(.5);
-  h1 {
-    $font-size: 28px;
-    @include adjust-font-size-to($font-size, 1.5);
-    @include trailer(.5, $font-size);
-  }
-  .img { @include trailer(.5); }
-  td { padding: rhythm(.25) rhythm(.5); }
-  #highlight ~ &, #arhiva &, #article & {
-    @include text-shadow(white 0 1px 0);
-    clear: right;
-    table {
-      @include inner-table-borders(1px, darken(white, 20%));
-      border-collapse: collapse;
-      color: lighten($text, 20%);
-    }
+  @include text-shadow(white 0 1px 0);
+  clear: right;
+
+  img { @include trailer(.5); }
+
+  table {
+    @include inner-table-borders(1px, darken(white, 20%));
+    color: lighten($text, 20%);
   }
 }
 
 #highlight {
-  @include box-sizing(border-box);
-  position: relative;
-  z-index: 10;
-  padding: rhythm(.25);
-  background: rgba(black, .15);
-  $color1: rgba(black, .05);
-  $color2: rgba(black, .1);
-  @include background(linear-gradient(
-    45deg,
-    $color1 25%,
-    $color2 25%,
-    $color2 50%,
-    $color1 50%,
-    $color1 75%,
-    $color2 75%
-  ));
-  @include background-size(4px 4px);
+  @extend %full-width;
+  @include trailer(.5);
+  padding: {
+    top: rhythm(.5);
+    bottom: rhythm(.5);
+  }
+  outline: 1px solid rgba(black, .25);
+  background: white;
+
   h1 {
-    $font-size: 44px;
-    @include adjust-font-size-to($font-size);
-    @include trailer(.5, $font-size);
-    @include text-shadow(
-      white 1px 1px 0,
-      rgba(black, .25) 2px 2px 1px
-    );
-    text-transform: none;
+    @include with-font-size(38px) {
+      @include trailer(.5);
+      @include text-shadow(
+        white 1px 1px 0,
+        rgba(black, .25) 2px 2px 1px
+      );
+      text-transform: none;
+      color: nth($colors, 3);
+    }
+  }
+
+  dl { @include clearfix; }
+
+  dt, dd {
+    margin: 0;
+    padding: rhythm(.25) rhythm(.5);
+  }
+
+  dt {
+    @extend %inline-block;
+    float: left;
+    clear: left;
+    width: 50%;
+  }
+
+  dd {
     color: nth($colors, 3);
+    &:nth-child(4n + 2) {
+      background: rgba(nth($colors, 3), .1);
+    }
   }
-  .inner {
-    @include box-shadow(rgba(black, .3) 0 0 8px);
-    padding: rhythm(.5);
-    background: white;
-  }
+
   table {
     @include trailer(.5);
     width: 100%;
     border-collapse: collapse;
   }
-  tr:nth-child(2n+1) { background: rgba(nth($colors, 3), .1); }
-  td:nth-child(2) { color: nth($colors, 3); }
-  th { text-align: left; }
-  thead tr:first-child { background: transparent; }
+
+  img { @include trailer(.5); }
+
   time { text-align: right; }
+
   :last-child { @include trailer(0); }
-  .img:last-child { line-height: 0; }
 }
 
 .go {
   @include rhythm(.5, 0, 0, .5);
-  text-align: left;
   a {
-    $color1: rgba(black, .4);
-    $color2: nth($colors, 5);
-    @include link-colors($color1, $color2, $color2, $color1, $color2);
+    @include color-link(rgba(black, .4), nth($colors, 5));
+    margin-left: - $grid-padding;
+    padding-left: $grid-padding;
+    padding-right: rhythm(.25);
     border: 1px solid rgba(black, .2);
-    padding: 0 rhythm(.25);
+    border-left-width: 0;
     background: rgba(black, .05);
     &:hover {
       text-decoration: none;
-      outline-color: rgba(black, .4);
+      border-color: rgba(black, .4);
     }
-    &:before { padding-right: 5px; }
   }
 }

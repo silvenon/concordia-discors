@@ -1,108 +1,108 @@
 @include at-breakpoint($widescreen-layout) {
 
-  body {
-    @include container;
-    @include padding-trailer;
-  }
+  body { @include padding-trailer; }
 
-  $main: $total-columns - 2;
-  #logo, div[role='main'], #footer { @include pad(1, 1); }
-
-  #header { background-image: url('/images/header_widescreen.jpg'); }
-
-  #logo { @include trailer(1); }
+  #header { background-image: image-url('header_widescreen.jpg'); }
 
   $cols: 8;
   #highlight {
-    @include span-columns($cols, $main);
+    @include span-columns($cols);
     @include leader(-4);
     h1 {
-      $font-size: 62px;
-      @include adjust-font-size-to($font-size);
-      @include trailer(.5, $font-size);
+      @include with-font-size(62px) {
+        @include trailer(.5);
+      }
     }
   }
 
-  nav { @include prefix($cols + .75); }
+  nav ol { margin-left: columns($cols) + gutter(); }
 
-  $cols: $main - $cols;
-  #highlight ~ article, .go {
-    @include span-columns($cols omega, $main);
+  $cols: $total-columns - $cols;
+  article, .go {
+    @include span-columns($cols omega);
   }
 
-  .go {
-    left: - columns(2, $main);
-    a { padding-left: columns(2, $cols); }
+  .go a {
+    margin-left: - gutter($cols);
+    padding-left: gutter($cols);
+    border-left: none;
   }
 
   .post {
-    h1{ float: left; }
+
+    header { @include clearfix; }
+
+    h1 { float: left; }
+
     time {
       float: right;
       @include adjust-leading-to(1.75);
     }
   }
 
-  #multimedija, #dionice {
-    #highlight ~ article {
-      li {
-        @include span-columns($cols / 2, $cols);
-        max-width: $widescreen-max-half-width;
-        margin-bottom: gutter($cols);
+  body {
+    &.multimedija, &.dionice {
+      article {
+        li {
+          @include span-columns($cols / 2, $cols);
+          max-width: $widescreen-max-half-width;
+          margin-bottom: gutter($cols);
+          &:nth-child(2n) {
+            @include remove-omega;
+            margin-right: 0;
+          }
+        }
       }
     }
-  }
 
-  #multimedija #highlight ~ article {
-    a {
-      @include leading-border($lines: 12.25);
-      @each $class in strike-a-pose, zbor-vladimir-prelog, susret-pjevackih-zborova, bozicni-koncert {
-        &.#{$class} { background-image: url('/images/multimedija/#{$class}_widescreen.jpg'); }
+    &.multimedija article {
+      a {
+        @include leading-border($lines: 11.25);
+        @each $class in strike-a-pose, zbor-vladimir-prelog, susret-pjevackih-zborova, bozicni-koncert {
+          &.#{$class} { background-image: image-url('multimedija/#{$class}_widescreen.jpg'); }
+        }
       }
     }
-  }
 
-  #dionice #highlight ~ article {
-    a {
-      $font-size: 54px;
-      @include h-borders($lines: 6.5, $font-size: $font-size);
-      @include v-borders($lines: 1, $font-size: $font-size);
-      @include adjust-font-size-to($font-size);
-      @each $voice in sopran, alt, tenor, bas {
-        &.#{$voice} { background-image: url('/images/dionice/#{$voice}/link_widescreen.jpg'); }
+    &.dionice article {
+      a {
+        @include with-font-size(54px) {
+          @include h-borders(1px, 5.5);
+          @include v-borders;
+          @each $voice in sopran, alt, tenor, bas {
+            &.#{$voice} { background-image: image-url('dionice/#{$voice}/link_widescreen.jpg'); }
+          }
+        }
       }
     }
-  }
 
-  #arhiva, #article {
-    article { max-width: none; }
-  }
+    &.arhiva, &.article {
+      nav ol { margin-left: 0; }
 
-  #arhiva, #article {
-    .go {
-      @include reset-columns;
-      @include leader(0);
-      a { padding-left: columns(2, $main); }
-    }
-  }
+      article { max-width: none; }
 
-  $cols: $main / 2 - .5;
-  #arhiva {
-    article {
-      @include span-columns($cols, $main);
-      &:nth-of-type(2n+1) {
-        clear: left;
-      }
-      &:nth-of-type(2n) {
-        @include omega;
-        clear: right;
+      .go {
+        @include reset-columns;
+
+        a {
+          margin-left: - $grid-padding;
+          padding-left: $grid-padding;
+        }
       }
     }
-  }
 
-  $cols: $main / 2;
-  #article {
-    article { @include span-columns($cols, $main); }
+    $cols: $total-columns / 2 - .5;
+    &.arhiva article {
+      @include span-columns($cols);
+      @include nth-omega(2n, of-type);
+      &:nth-of-type(2n+1) { clear: left; }
+      &:nth-of-type(2n) { clear: right; }
+    }
+
+    $cols: $total-columns / 2;
+    &.article article {
+      @include span-columns($cols);
+    }
   }
 
 }

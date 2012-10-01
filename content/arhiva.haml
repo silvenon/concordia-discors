@@ -3,8 +3,8 @@ title: Arhiva
 id: arhiva
 ---
 
-.go.back= link_to 'Početna', @items.find { |item| item[:id] == 'index' }
+.go.back= link_to 'Početna', '/'
 
 - sorted_articles.each do |article|
-  = render 'posts', :item => article do
+  = render 'posts', item: article do
     = article.compiled_content

@@ -1,4 +1,4 @@
-.go.back= link_to 'Arhiva vijesti', @items.find { |item| item[:id] == 'arhiva' }
+.go.back= link_to 'Arhiva vijesti', '/arhiva/'
 
 %article.post
   %header
@@ -6,7 +6,6 @@
     %h1= @item[:title]
 
   - if @item[:image]
-    %p
-      %img{:src => "/images/vijesti/#{@item[:image]}.jpg"}
+    = image_tag "vijesti/#{@item[:image]}.jpg"
 
   = yield

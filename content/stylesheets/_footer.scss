@@ -1,37 +1,21 @@
 #footer {
-  $font-size: 38px;
-  $height: rhythm(2, $font-size);
-  @include padding-leader(1, $font-size);
-  @include adjust-font-size-to($font-size, 1.5);
-  @include pie-clearfix;
-  clear: both;
-  padding-left: rhythm(.5, $font-size);
-  padding-right: rhythm(.5, $font-size);
+  @extend %full-width;
+  $height: 2;
+  @include adjust-leading-to($height);
+  @include padding-leader;
+  @include clearfix;
   font-family: $heading;
-  line-height: $height;
   background: white;
   outline: 1px solid rgba(black, .25);
-  img { max-height: 100%; }
-  ol {
-    @include horizontal-list(10px);
-  }
+
+  ol { @include horizontal-list(10px); }
+
   li {
-    @include trailer(1, $font-size);
-    height: $height;
-    position: relative;
+    @include with-font-size(38px) {
+      @include trailer;
+      height: rhythm($height);
+    }
   }
+
   a:hover { text-decoration: none; }
-  .at {
-    display: block;
-    position: absolute;
-    left: 0px;
-    top: $height * .2;
-  }
-  .hrt {
-    @include border-radius(5px);
-    @include box-sizing(border-box);
-    padding: 5px;
-    background: white;
-    border: 1px solid rgba(black, .2);
-  }
 }

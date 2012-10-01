@@ -1,3 +1,3 @@
 Zepto ->
-  $('#logo span').fitText 2.2,
+  $('#tagline').fitText 2.4,
     maxFontSize: '20px'

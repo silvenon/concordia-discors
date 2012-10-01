@@ -6,10 +6,9 @@ order: 2
 ---
 
 - content_for :highlight do
-  :markdown
-    # Koncerti
+  %h1 Koncerti
 
-    ![slika s jednog koncerta](/images/koncerti/highlight.jpg)
+  = image_tag 'koncerti/highlight.jpg', alt: 'slika s jednog koncerta'
 
 %article
   :markdown

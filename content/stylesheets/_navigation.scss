@@ -1,0 +1,31 @@
+nav {
+  @extend %full-width;
+  @include trailer(.5);
+  @include h-borders(1px, .25);
+  text-transform: uppercase;
+  border-top-color: white;
+  border-bottom-color: rgba(black, .25);
+  background: white;
+
+  ol {
+    @extend %unstyled-list;
+    @include clearfix;
+  }
+
+  li {
+    float: left;
+    padding: 0;
+  }
+
+  a { @include color-link(rgba(black, .3), rgba(black, .5)); }
+
+  .active { color: nth($colors, 5); }
+
+  a,
+  .active {
+    @include with-font-size(14px) {
+      display: block;
+      padding: rhythm(.1) rhythm(.25);
+    }
+  }
+}

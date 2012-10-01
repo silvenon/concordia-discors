@@ -1,30 +1,26 @@
-article h1 a {
-  $color1: rgba(nth($colors, 3), .75);
-  $color2: nth($colors, 3);
-  @include link-colors($color1, $color2, $color2, $color1, $color2);
+article, #highlight {
+  h1 a {
+    $color1: rgba(nth($colors, 3), .75);
+    $color2: nth($colors, 3);
+    @include color-link($color1, $color2);
+  }
 }
 
 .post {
-  @include trailing-border($lines: .5, $border-style: dashed);
+  @include trailing-border(1px, .5, $border-style: dashed);
   @include trailer;
+  overflow: hidden;
   border-color: rgba(black, .2);
   &:last-of-type {
     @include padding-trailer(0);
-    border: 0;
+    border-bottom: none;
   }
+
   img { max-width: none; }
-  &, header { @include clearfix; }
 }
 
-time {
-  display: block;
-  color: lighten($text, 30%);
-}
+body.article article img { max-width: 100%; }
 
-#index .go a:before { content: '\21E6 '; }
+time { color: lighten($text, 30%); }
 
-.back a:before { content: '\2190 '; }
-
-#arhiva, #article {
-  #header { @include trailer; }
-}
+.back a:before { content: '\2190\0020'; }

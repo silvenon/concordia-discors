@@ -1,33 +1,42 @@
-#multimedija #highlight ~ article {
-  ul { @include unstyled-list; }
-  li {
-    @include trailer(.5);
-    position: relative;
-    padding: 0;
-  }
-  a {
-    @include leading-border($lines: 10.25);
-    @include trailing-border($lines: .25);
-    @include v-borders($lines: .5);
-    @include text-shadow(none);
-    @include box-shadow(rgba(black, .5) 0 0 7px);
-    display: block;
-    background: white;
-    border-color: white;
-    &:before {
-      content: url('/images/logo/facebook.png');
+body.multimedija {
+
+  article {
+
+    ul { @extend %unstyled-list; }
+
+    li {
+      @include trailer(.5);
+      position: relative;
+      padding: 0;
+    }
+
+    a {
+      @include leading-border($lines: 9.5);
+      @include trailing-border($lines: .25);
+      @include v-borders($lines: .5);
+      @include text-shadow(none);
+      @include box-shadow(rgba(black, .5) 0 0 7px);
       display: block;
-      position: absolute;
-      top: 6px;
-      right: 6px;
+      background: white;
+      border-color: white;
+      &:before {
+        content: image-url('logo/facebook.png');
+        display: block;
+        position: absolute;
+        top: 6px;
+        right: 6px;
+      }
+      @each $class in strike-a-pose, zbor-vladimir-prelog, susret-pjevackih-zborova, bozicni-koncert {
+        &.#{$class} { background: white image-url('multimedija/#{$class}.jpg') no-repeat center top; }
+      }
     }
-    @each $class in strike-a-pose, zbor-vladimir-prelog, susret-pjevackih-zborova, bozicni-koncert {
-      &.#{$class} { background: white url('/images/multimedija/#{$class}.jpg') no-repeat center top; }
+
+    span {
+      @include leader(.5);
+      display: block;
     }
+
+    img, a { display: block; }
   }
-  span {
-    @include leader(.5);
-    display: block;
-  }
-  img, a { display: block; }
+
 }

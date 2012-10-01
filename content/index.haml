@@ -7,15 +7,15 @@ order: 0
 
 - highlight = sorted_articles[0]
 
-.go= link_to 'Arhiva vijesti', @items.find { |item| item[:id] == 'arhiva' }
+.go= link_to '⇦ Arhiva vijesti', '/arhiva/'
 
 - content_for :highlight do
   %h1= link_to highlight[:title], highlight
   - if highlight[:image]
-    %p= link_to image_tag("vijesti/#{highlight[:image]}.jpg"), "/images/vijesti/#{highlight[:image]}.jpg"
+    %p= link_to image_tag("vijesti/#{highlight[:image]}.jpg"), highlight
   = highlight.compiled_content
   %time{:datetime => DateTime.parse(highlight[:created_at]).to_date.to_s, :pubdate => true}= localize highlight[:created_at]
 
 - sorted_articles[1..2].each do |article|
-  = render 'posts', :item => article do
+  = render 'posts', item: article do
     = article.compiled_content

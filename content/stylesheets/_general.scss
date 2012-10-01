@@ -1,0 +1,81 @@
+@include establish-baseline;
+@include border-box-sizing;
+
+html { background: darken(white, 5%); }
+
+body {
+  @include container;
+  @include rhythm(0, 0, 0, 0);
+  -webkit-text-size-adjust: none;
+  overflow-y: scroll;
+  font-family: $body;
+  color: $text;
+}
+
+article,
+section,
+time {
+  display: block;
+}
+
+h1,
+h2,
+h3,
+p,
+ol,
+ul,
+dl,
+table,
+article,
+section,
+iframe {
+  @include rhythm(0, 0, 0, .5);
+}
+
+h1,
+h2,
+h3 {
+  font-family: $heading;
+  text: {
+    transform: uppercase;
+    rendering: optimizeLegibility;
+  }
+  -webkit-font-smoothing: antialiased;
+}
+
+strong { color: nth($colors, 3); }
+
+h1 {
+  @include with-font-size(28px, 1.5) {
+    @include trailer(.5);
+  }
+}
+
+a {
+  $c1: nth($colors, 5);
+  $c2: darken($c1, 20%);
+  @include hover-link;
+  @include color-link($c1, $c2);
+  &, &:hover {
+    @include transition(all .2s);
+  }
+}
+
+li { padding-left: rhythm(.25); }
+
+img,
+iframe {
+  max-width: 100%;
+}
+
+table { border-collapse: collapse; }
+thead { display: none; }
+td { padding: rhythm(.25) rhythm(.5); }
+
+input {
+  @include input-placeholder {
+    @include text-shadow(none);
+    background: nth($colors, 3);
+    color: white;
+  }
+}

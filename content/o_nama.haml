@@ -6,16 +6,15 @@ order: 1
 ---
 
 - content_for :highlight do
-  :markdown
-    # O nama
+  %h1 O nama
 
-    ![slika Concordie discors](/images/o_nama/highlight.jpg)
+  = image_tag 'o_nama/highlight.jpg', alt: 'slika Concordije discors'
 
 %article
   :markdown
     # Tko smo mi?
 
-    ![slika Concordie discors](/images/o_nama/ekipa.jpg)
+    #{image_tag 'o_nama/ekipa.jpg', alt: 'slika Concordije discors'}
 
     Mješoviti pjevački zbor Filozofskoga fakulteta *Concordia discors* djeluje od 2010. godine te okuplja šezdesetak članova, prvenstveno studenata Filozofskoga fakulteta.
 
