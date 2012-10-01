@@ -96,6 +96,7 @@
 
       .go {
         @include reset-columns;
+
         a {
           margin-left: - $grid-padding;
           padding-left: $grid-padding;
