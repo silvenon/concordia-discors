@@ -35,7 +35,7 @@ compile '/javascripts/*/' do
   filter :coffee
 end
 
-compile '/static/*' do
+compile '/static/*/' do
   # copy as is
 end
 
