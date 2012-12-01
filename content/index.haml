@@ -13,6 +13,8 @@ order: 0
   %h1= link_to highlight[:title], highlight
   - if highlight[:image]
     %p= link_to image_tag("vijesti/#{highlight[:image]}.jpg"), highlight
+  - else
+    %br
   = highlight.compiled_content
   %time{:datetime => DateTime.parse(highlight[:created_at]).to_date.to_s, :pubdate => true}= localize highlight[:created_at]
 
