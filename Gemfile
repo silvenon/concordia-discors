@@ -1,4 +1,4 @@
-source :rubygems
+source "https://rubygems.org"
 
 gem 'nanoc'
 gem 'adsf'
@@ -12,6 +12,6 @@ gem 'haml'
 gem 'maruku'
 gem 'builder'
 gem 'nokogiri'
-gem 'compass', '~> 0.13.alpha.0'
+gem 'compass', '~> 0.13.alpha'
 gem 'susy'
 gem 'coffee-script'
